@@ -1,0 +1,164 @@
+{
+  "session" : "angular",
+  "flashcards" : [ {
+    "difficulty" : "easy",
+    "question" : "What is an Angular component?",
+    "answer" : "<blockquote><strong>A component</strong></blockquote> <strong>controls</strong> a section of the UI using an <code>HTML template</code>, <code>CSS</code>, and <code>TypeScript</code> logic. It is <u>defined</u> using the <code>@Component</code> decorator.",
+    "color" : "success",
+    "topic" : "Components",
+    "answer_audio_path" : "audio/1/131_answer.mp3",
+    "question_audio_path" : "audio/1/131_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "How do you define a component in Angular?",
+    "answer" : "<u>Define</u> it using the <code>@Component</code> decorator with <strong>selector</strong>, <code>templateUrl</code> or <code>template</code>, and <code>styleUrls</code>.",
+    "color" : "success",
+    "topic" : "Components",
+    "answer_audio_path" : "audio/1/132_answer.mp3",
+    "question_audio_path" : "audio/1/132_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is the role of NgModule?",
+    "answer" : "<blockquote><strong>NgModule</strong></blockquote> is a <strong>decorator</strong> that <u>defines</u> a module which <u>groups</u> components, services, and other modules together.",
+    "color" : "warning",
+    "topic" : "Modules",
+    "answer_audio_path" : "audio/1/133_answer.mp3",
+    "question_audio_path" : "audio/1/133_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What is the root module in every Angular app?",
+    "answer" : "<strong><code>AppModule</code></strong> is the <strong>root module</strong> and is <u>bootstrapped</u> to <u>launch</u> the app.",
+    "color" : "success",
+    "topic" : "Modules",
+    "answer_audio_path" : "audio/1/134_answer.mp3",
+    "question_audio_path" : "audio/1/134_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is Dependency Injection in Angular?",
+    "answer" : "<blockquote><strong>Dependency Injection (DI)</strong></blockquote> is a <strong>design pattern</strong> where services or dependencies are <u>provided</u> to components rather than <u>created</u> inside them.",
+    "color" : "warning",
+    "topic" : "Services & DI",
+    "answer_audio_path" : "audio/1/135_answer.mp3",
+    "question_audio_path" : "audio/1/135_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "How do you create and inject a service in Angular?",
+    "answer" : "<u>Create</u> with <code>ng generate service myService</code>, and <u>inject</u> using the constructor: <code>constructor(private myService: MyService) {}</code>",
+    "color" : "warning",
+    "topic" : "Services & DI",
+    "answer_audio_path" : "audio/1/136_answer.mp3",
+    "question_audio_path" : "audio/1/136_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "How do you configure routing in Angular?",
+    "answer" : "<u>Configure</u> routing using the <code>RouterModule.forRoot(routes)</code> in <code>AppModule</code> and <u>define</u> routes as an array of <em>path-component</em> pairs.",
+    "color" : "warning",
+    "topic" : "Routing",
+    "answer_audio_path" : "audio/1/137_answer.mp3",
+    "question_audio_path" : "audio/1/137_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "How do you navigate programmatically in Angular?",
+    "answer" : "<u>Use</u> the <strong>Router</strong> service: <code>this.router.navigate(['/path']);</code>",
+    "color" : "warning",
+    "topic" : "Routing",
+    "answer_audio_path" : "audio/1/138_answer.mp3",
+    "question_audio_path" : "audio/1/138_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What is a structural directive in Angular?",
+    "answer" : "<blockquote><strong>A structural directive</strong></blockquote> <u>changes</u> the DOM layout by <u>adding/removing</u> elements (e.g., <code>*ngIf</code>, <code>*ngFor</code>).",
+    "color" : "success",
+    "topic" : "Directives",
+    "answer_audio_path" : "audio/1/139_answer.mp3",
+    "question_audio_path" : "audio/1/139_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What is the purpose of `*ngIf`?",
+    "answer" : "It <u>conditionally includes</u> or <u>removes</u> elements in the DOM based on a <strong>Boolean expression</strong>.",
+    "color" : "success",
+    "topic" : "Directives",
+    "answer_audio_path" : "audio/1/140_answer.mp3",
+    "question_audio_path" : "audio/1/140_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is ngOnInit?",
+    "answer" : "<code>ngOnInit()</code> is a <strong>lifecycle hook</strong> <u>called</u> after the component's constructor and after the first <code>ngOnChanges()</code>.",
+    "color" : "warning",
+    "topic" : "Lifecycle",
+    "answer_audio_path" : "audio/1/141_answer.mp3",
+    "question_audio_path" : "audio/1/141_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "When is ngOnDestroy called?",
+    "answer" : "<code>ngOnDestroy()</code> is <u>called</u> just before the component is <u>removed</u> from the DOM. <strong>Useful</strong> for <u>cleanup</u>.",
+    "color" : "warning",
+    "topic" : "Lifecycle",
+    "answer_audio_path" : "audio/1/142_answer.mp3",
+    "question_audio_path" : "audio/1/142_question.mp3"
+  }, {
+    "difficulty" : "hard",
+    "question" : "What is the difference between template-driven and reactive forms?",
+    "answer" : "<blockquote><strong>Template-driven forms</strong></blockquote> are <u>defined</u> in HTML using directives, while <strong>reactive forms</strong> are <u>defined</u> in TypeScript using <code>FormControl</code> and <code>FormGroup</code>.",
+    "color" : "danger",
+    "topic" : "Forms",
+    "answer_audio_path" : "audio/1/143_answer.mp3",
+    "question_audio_path" : "audio/1/143_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "How do you bind an input field to a variable in template-driven forms?",
+    "answer" : "<u>Use</u> <code>[(ngModel)]</code> two-way data binding.",
+    "color" : "success",
+    "topic" : "Forms",
+    "answer_audio_path" : "audio/1/144_answer.mp3",
+    "question_audio_path" : "audio/1/144_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is an Observable in Angular?",
+    "answer" : "<blockquote><strong>An Observable</strong></blockquote> represents a <strong>stream</strong> of asynchronous data that can be <u>subscribed</u> to.",
+    "color" : "warning",
+    "topic" : "RxJS",
+    "answer_audio_path" : "audio/1/145_answer.mp3",
+    "question_audio_path" : "audio/1/145_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What does the `subscribe()` method do?",
+    "answer" : "It <u>allows</u> you to <u>listen</u> to values <u>emitted</u> by an <strong>Observable</strong> and <u>take action</u> when values are received.",
+    "color" : "success",
+    "topic" : "RxJS",
+    "answer_audio_path" : "audio/1/146_answer.mp3",
+    "question_audio_path" : "audio/1/146_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is the `pipe()` method used for?",
+    "answer" : "It <u>chains</u> RxJS operators to <u>transform</u> the stream (e.g., <code>map</code>, <code>filter</code>, <code>switchMap</code>).",
+    "color" : "warning",
+    "topic" : "RxJS",
+    "answer_audio_path" : "audio/1/147_answer.mp3",
+    "question_audio_path" : "audio/1/147_question.mp3"
+  }, {
+    "difficulty" : "hard",
+    "question" : "What does `switchMap` do?",
+    "answer" : "<code>switchMap</code> <u>cancels</u> the previous inner <strong>Observable</strong> and <u>subscribes</u> to the new one. <strong>Useful</strong> for <em>search/autocomplete</em>.",
+    "color" : "danger",
+    "topic" : "RxJS",
+    "answer_audio_path" : "audio/1/148_answer.mp3",
+    "question_audio_path" : "audio/1/148_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "How do you generate a component using Angular CLI?",
+    "answer" : "<u>Run</u> <code>ng generate component component-name</code> or shorthand <code>ng g c component-name</code>",
+    "color" : "success",
+    "topic" : "CLI",
+    "answer_audio_path" : "audio/1/149_answer.mp3",
+    "question_audio_path" : "audio/1/149_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "How do you create a new Angular project?",
+    "answer" : "<u>Use</u> <code>ng new project-name</code>",
+    "color" : "success",
+    "topic" : "CLI",
+    "answer_audio_path" : "audio/1/150_answer.mp3",
+    "question_audio_path" : "audio/1/150_question.mp3"
+  } ]
+}

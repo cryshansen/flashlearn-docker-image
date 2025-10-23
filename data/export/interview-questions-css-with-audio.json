@@ -1,0 +1,161 @@
+[ {
+  "topic" : "Selectors",
+  "question" : "What is the difference between class and ID selectors in CSS?",
+  "answer" : "<blockquote>An <strong>ID</strong> selector is unique, while a <strong>class</strong> selector can apply to multiple elements.</blockquote> Use <code>#id</code> and <code>.class</code> respectively.",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_1-output.mp3",
+  "answer_audio" : "interview_a_1-output.mp3"
+}, {
+  "topic" : "Box Model",
+  "question" : "What are the components of the CSS Box Model?",
+  "answer" : "<blockquote>The box model consists of four areas: <strong>content</strong>, <strong>padding</strong>, <strong>border</strong>, and <strong>margin</strong>.</blockquote>",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_2-output.mp3",
+  "answer_audio" : "interview_a_2-output.mp3"
+}, {
+  "topic" : "Positioning",
+  "question" : "What does position: relative do?",
+  "answer" : "<blockquote>It <u>allows</u> an element to be positioned <em>relative to its normal position</em>.</blockquote>",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_3-output.mp3",
+  "answer_audio" : "interview_a_3-output.mp3"
+}, {
+  "topic" : "Flexbox",
+  "question" : "How do you create a flex container?",
+  "answer" : "<u>Apply</u> <code>display: flex;</code> to the parent element.",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_4-output.mp3",
+  "answer_audio" : "interview_a_4-output.mp3"
+}, {
+  "topic" : "Flexbox",
+  "question" : "How do you align items in the center using Flexbox?",
+  "answer" : "<u>Use</u> <code>justify-content: center;</code> and <code>align-items: center;</code>.",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_5-output.mp3",
+  "answer_audio" : "interview_a_5-output.mp3"
+}, {
+  "topic" : "Grid",
+  "question" : "How do you define a CSS Grid container?",
+  "answer" : "<u>Set</u> <code>display: grid;</code> on the parent element.",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_6-output.mp3",
+  "answer_audio" : "interview_a_6-output.mp3"
+}, {
+  "topic" : "Grid",
+  "question" : "How do you create two equal-width columns in CSS Grid?",
+  "answer" : "<u>Use</u> <code>grid-template-columns: 1fr 1fr;</code>.",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_7-output.mp3",
+  "answer_audio" : "interview_a_7-output.mp3"
+}, {
+  "topic" : "Specificity",
+  "question" : "What determines which CSS rule is applied when multiple match?",
+  "answer" : "<blockquote><strong>Specificity</strong> and source order determine rule application.</blockquote>",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_8-output.mp3",
+  "answer_audio" : "interview_a_8-output.mp3"
+}, {
+  "topic" : "Inheritance",
+  "question" : "Which properties are typically inherited in CSS?",
+  "answer" : "<u>Text-related</u> properties like <code>color</code>, <code>font-family</code>, and <code>line-height</code> are commonly inherited.",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_9-output.mp3",
+  "answer_audio" : "interview_a_9-output.mp3"
+}, {
+  "topic" : "Units",
+  "question" : "What is the difference between em and rem?",
+  "answer" : "<blockquote><strong>em</strong> is relative to the parent, <strong>rem</strong> is relative to the root element.</blockquote>",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_10-output.mp3",
+  "answer_audio" : "interview_a_10-output.mp3"
+}, {
+  "topic" : "Media Queries",
+  "question" : "How do you target screens smaller than 600px?",
+  "answer" : "<u>Use</u> <code>@media (max-width: 600px) { ... }</code>",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_11-output.mp3",
+  "answer_audio" : "interview_a_11-output.mp3"
+}, {
+  "topic" : "Pseudo-classes",
+  "question" : "What does :nth-child(2n) do?",
+  "answer" : "<blockquote><strong>Selects</strong> every even-numbered element in a list.</blockquote>",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_12-output.mp3",
+  "answer_audio" : "interview_a_12-output.mp3"
+}, {
+  "topic" : "Transitions",
+  "question" : "How do you animate a background color on hover?",
+  "answer" : "<u>Set</u> <code>transition: background-color 0.3s ease;</code> on the element and use <code>:hover</code> to change the color.",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_13-output.mp3",
+  "answer_audio" : "interview_a_13-output.mp3"
+}, {
+  "topic" : "Animations",
+  "question" : "How do you define a CSS animation?",
+  "answer" : "<u>Use</u> <code>@keyframes</code> to define it and <code>animation-name</code>, <code>duration</code> on the element.",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_14-output.mp3",
+  "answer_audio" : "interview_a_14-output.mp3"
+}, {
+  "topic" : "Z-Index",
+  "question" : "What does z-index control?",
+  "answer" : "<blockquote><strong>z-index</strong> controls the <em>stacking order</em> of elements on the Z axis.</blockquote>",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_15-output.mp3",
+  "answer_audio" : "interview_a_15-output.mp3"
+}, {
+  "topic" : "Overflow",
+  "question" : "What does overflow: hidden do?",
+  "answer" : "<u>Prevents</u> content from spilling outside its container.",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_16-output.mp3",
+  "answer_audio" : "interview_a_16-output.mp3"
+}, {
+  "topic" : "Selectors",
+  "question" : "What is the purpose of the universal selector (*)?",
+  "answer" : "<blockquote><strong>Applies</strong> a style to <em>all elements</em> on the page.</blockquote>",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_17-output.mp3",
+  "answer_audio" : "interview_a_17-output.mp3"
+}, {
+  "topic" : "Best Practices",
+  "question" : "Why is it better to avoid !important?",
+  "answer" : "<blockquote>It <u>overrides</u> specificity and <strong>makes debugging harder</strong>.</blockquote>",
+  "difficulty" : "medium",
+  "color" : "warning",
+  "question_audio" : "interview_q_18-output.mp3",
+  "answer_audio" : "interview_a_18-output.mp3"
+}, {
+  "topic" : "Performance",
+  "question" : "How can large CSS files impact performance?",
+  "answer" : "<blockquote>They <u>increase</u> page load time and <u>delay</u> render blocking.</blockquote> <em>Keep styles modular</em>.",
+  "difficulty" : "hard",
+  "color" : "danger",
+  "question_audio" : "interview_q_19-output.mp3",
+  "answer_audio" : "interview_a_19-output.mp3"
+}, {
+  "topic" : "Maintainability",
+  "question" : "How does using variables improve CSS maintainability?",
+  "answer" : "<blockquote><strong>CSS variables</strong> <u>allow</u> centralized control over values like colors and spacing.</blockquote>",
+  "difficulty" : "medium",
+  "color" : "primary",
+  "question_audio" : "interview_q_20-output.mp3",
+  "answer_audio" : "interview_a_20-output.mp3"
+} ]

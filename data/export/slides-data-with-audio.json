@@ -1,0 +1,34 @@
+[ {
+  "caption" : "I started in front end development then trained formally in back end which led me to full-stack roles in C# and Java. Over the past four years, I’ve been working heavily in Drupal/PHP, leading migrations and building custom modules. While I’ve enjoyed that work, I’ve always preferred Java stacks for their scalability and structure. Today I’m looking to bring that mix of front end creativity and back end depth into Java and modern frameworks like Angular and React.",
+  "audio" : "slide_1-output.mp3"
+}, {
+  "caption" : "I’ve been working in full-stack development since 2006, moving across different technologies as projects required. I started with iPhone apps, PHP CMS builds, and Drupal, while also learning C#.NET, Java, and database systems. Over the years, I built a strong foundation across back-end and front-end development",
+  "audio" : "slide_2-output.mp3"
+}, {
+  "caption" : "From 2011 onward, I worked primarily in enterprise environments with .NET and Java, building APIs, integrating databases, and scaling applications. I spent about nine years in roles where Java was a core technology, alongside JavaScript on the front end.",
+  "audio" : "slide_3-output.mp3"
+}, {
+  "caption" : "In the last four years, I’ve been focused on PHP and Drupal, leading migrations, building custom modules, and doing full-stack delivery. Even though the stack was PHP-based, I still approached it with the same architectural mindset I used in Java projects: clean design patterns, scalable database structures, and reusable code.",
+  "audio" : "slide_4-output.mp3"
+}, {
+  "caption" : "Altogether, my career has always been about being a full-stack problem solver. I’ve worked in PHP, .NET, and Java, but my long-term strength and interest has always been in Java development, and I’m looking to continue building scalable applications with it.",
+  "audio" : "slide_5-output.mp3"
+}, {
+  "caption" : "In one ETL project at a banking client, I was responsible for migrating multiple datasets — terms, accounts, transactions, and KYC data — into a new system. Using the architect’s design, I implemented the data transformation and merged old product types into new ones. To handle the volume efficiently, I coded multithreaded C# processes for reconciliation, which reduced runtime by 4x. I also ensured all security and compliance requirements were met. This project strengthened my SQL and back end skills, and gave me experience optimizing large-scale data migrations.",
+  "audio" : "slide_6-output.mp3"
+}, {
+  "caption" : "I took a legacy PHP site that relied heavily on PHP filters — which posed security risks — and migrated all code into Drupal. This allowed us to leverage Drupal’s built-in security and SEO capabilities. I ensured media and file handling were SEO-compliant, applied proper access controls, and maintained the site throughout the upgrade. As a result, the website became secure, maintainable, and optimized for search engines.",
+  "audio" : "slide_7-output.mp3"
+}, {
+  "caption" : "I led the migration of our customer relationship system into a new platform, merging two systems’ datasets while ensuring data integrity. I used MySQL for data management and Python scripts to link APIs, merge records, and automate ingestion. This resulted in a unified, accurate, and accessible customer database, which improved reporting and set the stage for further integrations.",
+  "audio" : "slide_8-output.mp3"
+}, {
+  "caption" : "I’ve built a couple of AI-powered apps. For example, one was a Fortune Teller app using Java and Spring Boot, where I created REST APIs to generate predictions and handled multithreaded request processing. Another was Happy2Be, where we integrated a BERT NLP model via a Flask back end to analyze user text inputs and return sentiment insights. In both cases, I focused on back end architecture, API integration, and ensuring the apps were responsive and modular for future improvements.",
+  "audio" : "slide_9-output.mp3"
+}, {
+  "caption" : "The Fortune Teller app was a back end-focused project built with Java and Spring Boot. I designed REST APIs to handle user inputs and generate predictions based on predefined logic. The back end handled request routing, input validation, and response formatting, while maintaining stateless endpoints suitable for future scaling. We incorporated a simple AI layer that could generate responses based on input patterns, and I focused on multithreading and service orchestration to ensure responsiveness under concurrent requests.",
+  "audio" : "slide_10-output.mp3"
+}, {
+  "caption" : "Happy2Be was a project exploring natural language understanding using the BERT model. We used Python and Flask for the back end API to accept user text inputs and return sentiment or happiness-related suggestions. My role was integrating the API with the BERT model, managing preprocessing of text, handling model inference, and returning structured responses. I also focused on connecting the Flask back end with a front end interface, so users could interact with the model in real-time.",
+  "audio" : "slide_11-output.mp3"
+} ]

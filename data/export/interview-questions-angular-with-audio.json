@@ -1,0 +1,129 @@
+[ {
+  "topic" : "Components",
+  "question" : "Can you explain the role of components in Angular and how they communicate with each other?",
+  "answer" : "<strong>Components</strong> are the <strong>building blocks</strong> of Angular applications. Each component <u>controls</u> part of the UI and consists of a <code>TypeScript</code> class, an <code>HTML</code> template, and styles. Components <u>communicate</u> via <code>@Input</code> and <code>@Output</code> — <code>@Input</code> <u>allows</u> <strong>data</strong> to be <u>passed</u> from <strong>parent to child</strong>, while <code>@Output</code> <u>emits</u> events from <strong>child to parent</strong> using <code>EventEmitters</code>.",
+  "difficulty" : "medium",
+  "color" : "warning",
+  "question_audio" : "interview_q_1-output.mp3",
+  "answer_audio" : "interview_a_1-output.mp3"
+}, {
+  "topic" : "Routing",
+  "question" : "How would you implement a protected route in Angular?",
+  "answer" : "To <u>protect</u> a route in Angular, you use a <strong>route guard</strong>. The <code>CanActivate</code> interface is <u>implemented</u> in a service that <u>checks</u> if the user <u>meets</u> access criteria. The guard is then <u>applied</u> in the <code>RouterModule</code>. If access is denied, navigation is <u>canceled</u> or <u>redirected</u>.",
+  "difficulty" : "hard",
+  "color" : "danger",
+  "question_audio" : "interview_q_2-output.mp3",
+  "answer_audio" : "interview_a_2-output.mp3"
+}, {
+  "topic" : "RxJS",
+  "question" : "When would you use switchMap over mergeMap in Angular?",
+  "answer" : "You use <code>switchMap</code> when you want to <u>cancel</u> a <strong>previous observable</strong> when a new value is <u>emitted</u>. This is useful in scenarios like <strong>search/autocomplete</strong>, where only the <strong>latest request</strong> should be <u>processed</u>. <code>mergeMap</code>, on the other hand, <u>keeps</u> all <strong>subscriptions</strong> <u>active</u>, making it better for <strong>parallel streams</strong>.",
+  "difficulty" : "hard",
+  "color" : "danger",
+  "question_audio" : "interview_q_3-output.mp3",
+  "answer_audio" : "interview_a_3-output.mp3"
+}, {
+  "topic" : "Forms",
+  "question" : "What are the advantages of reactive forms over template-driven forms?",
+  "answer" : "<strong>Reactive forms</strong> <u>offer</u> more control. They're <u>defined</u> in <code>TypeScript</code> and <u>allow</u> for <strong>dynamic creation</strong>, easier validation, and <strong>predictable state management</strong>. They’re ideal for <strong>complex forms</strong> in large apps.",
+  "difficulty" : "medium",
+  "color" : "warning",
+  "question_audio" : "interview_q_4-output.mp3",
+  "answer_audio" : "interview_a_4-output.mp3"
+}, {
+  "topic" : "Services & DI",
+  "question" : "How does Angular handle dependency injection and how is it beneficial?",
+  "answer" : "Angular <u>uses</u> a <strong>built-in DI system</strong> to <u>inject</u> <strong>services</strong> into components. This <u>promotes</u> <strong>loose coupling</strong> and <strong>testability</strong>. Services can be <u>provided</u> in <code>root</code> or specific modules using <code>providedIn</code>.",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_5-output.mp3",
+  "answer_audio" : "interview_a_5-output.mp3"
+}, {
+  "topic" : "Lifecycle",
+  "question" : "What is the ngOnInit lifecycle hook used for?",
+  "answer" : "<code>ngOnInit()</code> is <u>called</u> after the component is <u>initialized</u>. It's commonly <u>used</u> to <u>fetch</u> data or <u>set up</u> state.",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_6-output.mp3",
+  "answer_audio" : "interview_a_6-output.mp3"
+}, {
+  "topic" : "Directives",
+  "question" : "What is the difference between structural and attribute directives?",
+  "answer" : "<strong>Structural directives</strong> (e.g., <code>*ngIf</code>, <code>*ngFor</code>) <u>change</u> the layout by <u>adding</u> or <u>removing</u> elements. <strong>Attribute directives</strong> (e.g., <code>ngClass</code>) <u>change</u> the appearance or behavior of elements.",
+  "difficulty" : "medium",
+  "color" : "warning",
+  "question_audio" : "interview_q_7-output.mp3",
+  "answer_audio" : "interview_a_7-output.mp3"
+}, {
+  "topic" : "Change Detection",
+  "question" : "How does Angular's change detection mechanism work?",
+  "answer" : "Angular <u>checks</u> the <strong>component tree</strong> for changes after events (like <strong>clicks</strong> or <strong>HTTP responses</strong>). If values <u>change</u>, the DOM is <u>updated</u>. <code>OnPush</code> strategy <u>optimizes</u> performance by only <u>checking</u> inputs.",
+  "difficulty" : "hard",
+  "color" : "danger",
+  "question_audio" : "interview_q_8-output.mp3",
+  "answer_audio" : "interview_a_8-output.mp3"
+}, {
+  "topic" : "Pipes",
+  "question" : "What are Angular pipes and when would you create a custom pipe?",
+  "answer" : "<strong>Pipes</strong> <u>transform</u> data in templates. For example, <code>date</code> or <code>currency</code>. You <u>create</u> a <strong>custom pipe</strong> when you <u>need</u> reusable logic that Angular doesn’t offer.",
+  "difficulty" : "easy",
+  "color" : "success",
+  "question_audio" : "interview_q_9-output.mp3",
+  "answer_audio" : "interview_a_9-output.mp3"
+}, {
+  "topic" : "Modules",
+  "question" : "What is the difference between feature modules and the root module?",
+  "answer" : "The <code>AppModule</code> is the <strong>root module</strong> that <u>bootstraps</u> the app. <strong>Feature modules</strong> <u>organize</u> related code and can be <u>loaded</u> eagerly or lazily.",
+  "difficulty" : "medium",
+  "color" : "warning",
+  "question_audio" : "interview_q_10-output.mp3",
+  "answer_audio" : "interview_a_10-output.mp3"
+}, {
+  "topic" : "Lazy Loading",
+  "question" : "What is lazy loading and how is it implemented in Angular?",
+  "answer" : "<strong>Lazy loading</strong> <u>delays</u> loading of feature modules until they’re <u>needed</u>. It's done with the <code>loadChildren</code> property in route configuration.",
+  "difficulty" : "hard",
+  "color" : "danger",
+  "question_audio" : "interview_q_11-output.mp3",
+  "answer_audio" : "interview_a_11-output.mp3"
+}, {
+  "topic" : "Testing",
+  "question" : "How do you unit test a component in Angular?",
+  "answer" : "Use <code>TestBed</code> to <u>configure</u> a test module. Then <u>create</u> a <strong>fixture</strong> and <u>access</u> the component instance. Use <code>Jasmine</code> for specs and assertions.",
+  "difficulty" : "medium",
+  "color" : "warning",
+  "question_audio" : "interview_q_12-output.mp3",
+  "answer_audio" : "interview_a_12-output.mp3"
+}, {
+  "topic" : "Routing",
+  "question" : "How do you pass data between routes in Angular?",
+  "answer" : "You can <u>pass</u> data using <strong>route parameters</strong> (<code>:id</code>), <strong>query parameters</strong> (<code>?id=123</code>), or <u>inject</u> state using <code>NavigationExtras</code>.",
+  "difficulty" : "medium",
+  "color" : "warning",
+  "question_audio" : "interview_q_13-output.mp3",
+  "answer_audio" : "interview_a_13-output.mp3"
+}, {
+  "topic" : "Security",
+  "question" : "How do you prevent XSS in Angular?",
+  "answer" : "Angular <u>escapes</u> values in templates to <u>prevent</u> <strong>XSS</strong>. For dynamic HTML, use <code>DomSanitizer</code> carefully. Never <u>bind</u> raw user input into <code>[innerHTML]</code>.",
+  "difficulty" : "hard",
+  "color" : "danger",
+  "question_audio" : "interview_q_14-output.mp3",
+  "answer_audio" : "interview_a_14-output.mp3"
+}, {
+  "topic" : "Performance",
+  "question" : "What techniques improve Angular performance?",
+  "answer" : "<u>Use</u> <code>OnPush</code> detection, <strong>lazy loading</strong>, <code>trackBy</code> with <code>*ngFor</code>, and <u>unsubscribe</u> from observables. Avoid <u>unnecessary</u> DOM updates.",
+  "difficulty" : "hard",
+  "color" : "danger",
+  "question_audio" : "interview_q_15-output.mp3",
+  "answer_audio" : "interview_a_15-output.mp3"
+}, {
+  "topic" : "Styling",
+  "question" : "How does Angular encapsulate component styles?",
+  "answer" : "Angular <u>uses</u> <code>ViewEncapsulation</code> to <u>scope</u> styles. By default it’s <code>Emulated</code>. You can <u>change</u> it to <code>None</code> or <code>ShadowDom</code>.",
+  "difficulty" : "medium",
+  "color" : "warning",
+  "question_audio" : "interview_q_16-output.mp3",
+  "answer_audio" : "interview_a_16-output.mp3"
+} ]

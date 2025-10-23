@@ -1,0 +1,124 @@
+{
+  "session" : "spring",
+  "flashcards" : [ {
+    "difficulty" : "medium",
+    "question" : "What is Dependency Injection in Spring?",
+    "answer" : "It's a <strong>design pattern</strong> where the <strong>Spring container</strong> <u>injects</u> <strong>dependencies</strong> into a <strong>bean</strong> at runtime instead of the bean <u>creating</u> them itself.",
+    "color" : "warning",
+    "topic" : "Spring Core",
+    "answer_audio_path" : "audio/1/181_answer.mp3",
+    "question_audio_path" : "audio/1/181_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What is a Spring Bean?",
+    "answer" : "A <strong>bean</strong> is an <strong>object</strong> that is <u>managed</u> by the <strong>Spring IoC container</strong>.",
+    "color" : "success",
+    "topic" : "Spring Core",
+    "answer_audio_path" : "audio/1/182_answer.mp3",
+    "question_audio_path" : "audio/1/182_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What does @SpringBootApplication do?",
+    "answer" : "It is a <strong>convenience annotation</strong> that <u>combines</u> <code>@Configuration</code>, <code>@EnableAutoConfiguration</code>, and <code>@ComponentScan</code>.",
+    "color" : "success",
+    "topic" : "Spring Boot",
+    "answer_audio_path" : "audio/1/183_answer.mp3",
+    "question_audio_path" : "audio/1/183_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What is application.properties used for?",
+    "answer" : "It is <u>used</u> to <u>define</u> <strong>configuration values</strong> such as <strong>port</strong>, <strong>datasource</strong>, <strong>logging levels</strong>, etc.",
+    "color" : "success",
+    "topic" : "Spring Boot",
+    "answer_audio_path" : "audio/1/184_answer.mp3",
+    "question_audio_path" : "audio/1/184_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What is @RestController?",
+    "answer" : "<code>@RestController</code> is a specialized <strong>version</strong> of <code>@Controller</code> that <u>combines</u> <code>@Controller</code> and <code>@ResponseBody</code>.",
+    "color" : "success",
+    "topic" : "Spring MVC",
+    "answer_audio_path" : "audio/1/185_answer.mp3",
+    "question_audio_path" : "audio/1/185_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "How does Spring handle incoming HTTP requests?",
+    "answer" : "<strong>Spring MVC</strong> <u>maps</u> <strong>requests</strong> to <strong>controller methods</strong> using <strong>annotations</strong> like <code>@RequestMapping</code>, <code>@GetMapping</code>, etc.",
+    "color" : "warning",
+    "topic" : "Spring MVC",
+    "answer_audio_path" : "audio/1/186_answer.mp3",
+    "question_audio_path" : "audio/1/186_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is the purpose of Spring Data JPA?",
+    "answer" : "It <u>simplifies</u> <strong>database access</strong> using <strong>repository interfaces</strong> and <u>automatically implements</u> <strong>CRUD operations</strong>.",
+    "color" : "warning",
+    "topic" : "Spring Data JPA",
+    "answer_audio_path" : "audio/1/187_answer.mp3",
+    "question_audio_path" : "audio/1/187_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What does @Entity mean?",
+    "answer" : "It <u>marks</u> a <strong>class</strong> as a <strong>JPA entity</strong>, <u>representing</u> a <strong>table</strong> in the <strong>database</strong>.",
+    "color" : "success",
+    "topic" : "Spring Data JPA",
+    "answer_audio_path" : "audio/1/188_answer.mp3",
+    "question_audio_path" : "audio/1/188_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is Spring Security?",
+    "answer" : "A <strong>framework</strong> for <u>handling</u> <strong>authentication</strong> and <strong>authorization</strong> in <strong>Spring applications</strong>.",
+    "color" : "warning",
+    "topic" : "Spring Security",
+    "answer_audio_path" : "audio/1/189_answer.mp3",
+    "question_audio_path" : "audio/1/189_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "How do you secure endpoints in Spring?",
+    "answer" : "By <u>configuring</u> <code>HttpSecurity</code> and <u>using</u> <strong>annotations</strong> like <code>@PreAuthorize</code> or <code>@Secured</code>.",
+    "color" : "warning",
+    "topic" : "Spring Security",
+    "answer_audio_path" : "audio/1/190_answer.mp3",
+    "question_audio_path" : "audio/1/190_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is the role of the Spring Container?",
+    "answer" : "The <strong>Spring Container</strong> <u>manages</u> the <strong>lifecycle</strong> and <strong>configuration</strong> of <strong>application objects</strong> (beans) using <strong>dependency injection</strong>.",
+    "color" : "warning",
+    "topic" : "Spring",
+    "answer_audio_path" : "audio/1/191_answer.mp3",
+    "question_audio_path" : "audio/1/191_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is Dependency Injection?",
+    "answer" : "<strong>DI</strong> is a <strong>design pattern</strong> where <strong>objects</strong> are <u>provided</u> with their <strong>dependencies</strong> by an external <strong>source</strong> rather than <u>creating</u> them internally. Spring <u>supports</u> <strong>constructor</strong> and <strong>setter injection</strong>.",
+    "color" : "warning",
+    "topic" : "Spring",
+    "answer_audio_path" : "audio/1/192_answer.mp3",
+    "question_audio_path" : "audio/1/192_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What are @Component, @Service, and @Repository annotations?",
+    "answer" : "They are <strong>specializations</strong> of <code>@Component</code> <u>used</u> to <u>mark</u> <strong>beans</strong> for Spring’s <strong>component scanning</strong> with different <strong>semantics</strong> (e.g., <code>@Repository</code> for <strong>DAOs</strong>).",
+    "color" : "warning",
+    "topic" : "Spring",
+    "answer_audio_path" : "audio/1/193_answer.mp3",
+    "question_audio_path" : "audio/1/193_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What is Spring Boot and how does it simplify Spring development?",
+    "answer" : "<strong>Spring Boot</strong> <u>provides</u> <strong>opinionated defaults</strong>, <strong>auto-configuration</strong>, and <strong>embedded servers</strong>, <u>reducing</u> <strong>boilerplate</strong> and <u>simplifying</u> <strong>application setup</strong>.",
+    "color" : "warning",
+    "topic" : "Spring",
+    "answer_audio_path" : "audio/1/194_answer.mp3",
+    "question_audio_path" : "audio/1/194_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "How does Spring manage transactions?",
+    "answer" : "Spring <u>uses</u> <code>@Transactional</code> to <u>manage</u> <strong>transactions</strong> declaratively. It <u>integrates</u> with various <strong>transaction managers</strong> (JDBC, JPA, etc.).",
+    "color" : "warning",
+    "topic" : "Spring",
+    "answer_audio_path" : "audio/1/195_answer.mp3",
+    "question_audio_path" : "audio/1/195_question.mp3"
+  } ]
+}

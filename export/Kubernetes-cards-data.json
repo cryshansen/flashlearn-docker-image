@@ -1,0 +1,137 @@
+[ {
+  "difficulty" : "easy",
+  "question" : "What is the primary purpose of <strong>Kubernetes</strong>?",
+  "answer" : "It <u>automates</u> the <u>deployment</u>, <u>scaling</u>, and <u>management</u> of containerized applications.",
+  "color" : "success",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/11_answer.mp3",
+  "question_audio_path" : "audio/1/11_question.mp3"
+}, {
+  "difficulty" : "easy",
+  "question" : "What does <strong>Pod</strong> represent in Kubernetes?",
+  "answer" : "A <strong>Pod</strong> is the smallest deployable unit that can <u>host</u> one or more containers.",
+  "color" : "success",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/12_answer.mp3",
+  "question_audio_path" : "audio/1/12_question.mp3"
+}, {
+  "difficulty" : "medium",
+  "question" : "What <strong>container orchestration</strong> capabilities does Kubernetes provide?",
+  "answer" : "It <u>manages</u> containerized applications across a cluster to provide <em>high availability</em> and <em>scalability</em>.",
+  "color" : "warning",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/13_answer.mp3",
+  "question_audio_path" : "audio/1/13_question.mp3"
+}, {
+  "difficulty" : "medium",
+  "question" : "What is a <strong>Service</strong> in Kubernetes?",
+  "answer" : "A <strong>Service</strong> is an abstraction that <u>defines</u> a logical set of Pods and a policy for <u>accessing</u> them.",
+  "color" : "warning",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/14_answer.mp3",
+  "question_audio_path" : "audio/1/14_question.mp3"
+}, {
+  "difficulty" : "easy",
+  "question" : "What role does a <strong>Node</strong> play in a Kubernetes cluster?",
+  "answer" : "A <strong>Node</strong> is a worker machine that <u>executes</u> Pods and is managed by the <strong>Master node</strong>.",
+  "color" : "success",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/15_answer.mp3",
+  "question_audio_path" : "audio/1/15_question.mp3"
+}, {
+  "difficulty" : "medium",
+  "question" : "What is a <strong>Deployment</strong> in Kubernetes?",
+  "answer" : "A <strong>Deployment</strong> provides declarative updates for Pods and <u>ensures</u> the desired number of replicas are <u>running</u>.",
+  "color" : "warning",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/16_answer.mp3",
+  "question_audio_path" : "audio/1/16_question.mp3"
+}, {
+  "difficulty" : "medium",
+  "question" : "What does the term <strong>Kubelet</strong> refer to?",
+  "answer" : "The <strong>Kubelet</strong> is an agent that <u>runs</u> on each Node and <u>ensures</u> the defined containers are <u>running</u>.",
+  "color" : "warning",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/17_answer.mp3",
+  "question_audio_path" : "audio/1/17_question.mp3"
+}, {
+  "difficulty" : "medium",
+  "question" : "What is the purpose of a <strong>ConfigMap</strong>?",
+  "answer" : "A <strong>ConfigMap</strong> is used to <u>store</u> non-sensitive configuration data in key-value pairs to <u>inject</u> into Pods.",
+  "color" : "warning",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/18_answer.mp3",
+  "question_audio_path" : "audio/1/18_question.mp3"
+}, {
+  "difficulty" : "hard",
+  "question" : "What feature does the <strong>Kubernetes Scheduler</strong> provide?",
+  "answer" : "The <strong>Kubernetes Scheduler</strong> <u>assigns</u> Pods to Nodes based on resource availability and other constraints.",
+  "color" : "danger",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/19_answer.mp3",
+  "question_audio_path" : "audio/1/19_question.mp3"
+}, {
+  "difficulty" : "medium",
+  "question" : "What does <strong>Horizontal Pod Autoscaler</strong> do?",
+  "answer" : "<strong>Horizontal Pod Autoscaler</strong> automatically <u>scales</u> the number of Pods based on observed CPU utilization or other select metrics.",
+  "color" : "warning",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/20_answer.mp3",
+  "question_audio_path" : "audio/1/20_question.mp3"
+}, {
+  "difficulty" : "medium",
+  "question" : "What is a <strong>Namespace</strong> in Kubernetes?",
+  "answer" : "A <strong>Namespace</strong> provides a mechanism to <u>divide</u> cluster resources between multiple users or applications.",
+  "color" : "warning",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/21_answer.mp3",
+  "question_audio_path" : "audio/1/21_question.mp3"
+}, {
+  "difficulty" : "hard",
+  "question" : "What is the role of the <strong>Master Node</strong>?",
+  "answer" : "The <strong>Master Node</strong> is responsible for <u>managing</u> the Kubernetes cluster and coordinating the activities of Workers.",
+  "color" : "danger",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/22_answer.mp3",
+  "question_audio_path" : "audio/1/22_question.mp3"
+}, {
+  "difficulty" : "hard",
+  "question" : "What does <strong>etcd</strong> do in Kubernetes?",
+  "answer" : "<strong>etcd</strong> is a distributed key-value store that <u>stores</u> all cluster data, including configurations and states.",
+  "color" : "danger",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/23_answer.mp3",
+  "question_audio_path" : "audio/1/23_question.mp3"
+}, {
+  "difficulty" : "medium",
+  "question" : "What is a <strong>Volume</strong> in Kubernetes?",
+  "answer" : "A <strong>Volume</strong> is a piece of storage in the Kubernetes cluster that <u>exists</u> beyond the lifespan of a Pod.",
+  "color" : "warning",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/24_answer.mp3",
+  "question_audio_path" : "audio/1/24_question.mp3"
+}, {
+  "difficulty" : "hard",
+  "question" : "What is the difference between a <strong>ClusterIP</strong> and a <strong>NodePort</strong> Service?",
+  "answer" : "<strong>ClusterIP</strong> makes a service accessible only within the cluster, while <strong>NodePort</strong> exposes it on a port on each Node.",
+  "color" : "danger",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/25_answer.mp3",
+  "question_audio_path" : "audio/1/25_question.mp3"
+}, {
+  "difficulty" : "hard",
+  "question" : "What is the purpose of <strong>Custom Resource Definitions (CRDs)</strong>?",
+  "answer" : "<strong>CRDs</strong> allow users to <u>extend</u> Kubernetes capabilities by defining their own resource types.",
+  "color" : "danger",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/26_answer.mp3",
+  "question_audio_path" : "audio/1/26_question.mp3"
+}, {
+  "difficulty" : "easy",
+  "question" : "What is the <strong>kubectl</strong> command line tool used for?",
+  "answer" : "<strong>kubectl</strong> is used to <u>interact</u> with the Kubernetes API and manage cluster resources.",
+  "color" : "success",
+  "topic" : "Kubernetes",
+  "answer_audio_path" : "audio/1/27_answer.mp3",
+  "question_audio_path" : "audio/1/27_question.mp3"
+} ]

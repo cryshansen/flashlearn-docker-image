@@ -1,0 +1,83 @@
+[
+    {
+    
+"Host": "Welcome to today’s episode! We’re diving into the career journey of a full-stack developer who’s worked across PHP, .NET, and Java — and is now steering back into Java and modern frameworks.",
+
+"You": "Thanks for having me. I’m excited to share my story."
+
+},{
+
+"Host": "Let’s start at the beginning. How did You get into development?",
+
+"You": "I started in frontend development, then trained formally in backend, which led me to full-stack roles in C Sharp and Java. Over the past four years, I’ve been working heavily in Drupal and PHP, leading migrations and building custom modules. While I’ve enjoyed that work, I’ve always preferred Java stacks for their scalability and structure. Today I’m looking to bring that mix of frontend creativity and backend depth into Java and modern frameworks like Angular and React."
+
+},{
+
+"Host": "So You’ve been full-stack for a while?",
+
+"You": "I’ve been working in full-stack development since 2006, moving across different technologies as projects required. I started with iPhone apps, PHP CMS builds, and Drupal, while also learning C Sharp dot NET, Java, and database systems. Over the years, I built a strong foundation across back-end and front-end development."
+
+},{
+
+"Host":"At some point, You moved into enterprise work. What was that like?",
+
+"You": "From 2011 onward, I worked primarily in enterprise environments with dot NET and Java, building APIs, integrating databases, and scaling applications. I spent about nine years in roles where Java was a core technology, alongside JavaScript on the front end."
+
+},{
+
+"Host":"But recently, You’ve been working with Drupal?",
+
+"You": "Yes. In the last four years, I’ve been focused on PHP and Drupal, leading migrations, building custom modules, and doing full-stack delivery. Even though the stack was PHP-based, I still approached it with the same architectural mindset I used in Java projects: clean design patterns, scalable database structures, and reusable code."
+
+},{
+
+"Host": "What would You say is the big picture of You'r career?",
+
+"You": "Altogether, my career has always been about being a full-stack problem solver. I’ve worked in PHP, dot NET, and Java, but my long-term strength and interest has always been in Java development, and I’m looking to continue building scalable applications with it."
+
+
+},{
+
+"Host": "Can you give me an example of a technical project?",
+
+"You": "In one ETL project at a banking client, I was responsible for migrating multiple datasets — terms, accounts, transactions, and KYC data — into a new system. Using the architect’s design, I implemented the data transformation and merged old product types into new ones. To handle the volume efficiently, I coded multithreaded C Sharp processes for reconciliation, which reduced runtime by four times. I also ensured all security and compliance requirements were met. This project strengthened my SQL and backend skills, and gave me experience optimizing large-scale data migrations."
+
+},{
+
+"Host": "How about your Drupal projects?",
+
+"You": "I took a legacy PHP site that relied heavily on PHP filters — which posed security risks — and migrated all code into Drupal. This allowed us to leverage Drupal’s built-in security and SEO capabilities. I ensured media and file handling were SEO-compliant, applied proper access controls, and maintained the site throughout the upgrade. As a result, the website became secure, maintainable, and optimized for search engines."
+
+},{
+
+"Host": "And you’ve led system migrations too?",
+
+"You": "Yes. I led the migration of our customer relationship system into a new platform, merging two systems’ datasets while ensuring data integrity. I used MySQL for data management and Python scripts to link APIs, merge records, and automate ingestion. This resulted in a unified, accurate, and accessible customer database, which improved reporting and set the stage for further integrations."
+
+},{
+
+"Host": "I also heard you’ve built some AI-powered apps?",
+
+"You": "I have. One was a Fortune Teller app using Java and Spring Boot, where I created REST APIs to generate predictions and handled multithreaded request processing. Another was Happy2Be, where we integrated a BERT NLP model via a Flask backend to analyze user text inputs and return sentiment insights. In both cases, I focused on backend architecture, API integration, and ensuring the apps were responsive and modular for future improvements."
+
+},{
+
+"Host": "Can you tell me a bit more about those?",
+
+"You": "The Fortune Teller app was backend-focused, built with Java and Spring Boot. I designed REST APIs to handle user inputs and generate predictions. The backend handled request routing, input validation, and response formatting, while maintaining stateless endpoints suitable for future scaling. We incorporated a simple AI layer that could generate responses based on input patterns, and I focused on multithreading and service orchestration to ensure responsiveness under concurrent requests."
+},{
+
+"Host": "And, Happy2Be?",
+"You": "Happy2Be was a project exploring natural language understanding using the BERT model. We used Python and Flask for the backend API to accept user text inputs and return sentiment or happiness-related suggestions. My role was integrating the API with the BERT model, managing preprocessing of text, handling model inference, and returning structured responses. I also focused on connecting the Flask backend with a frontend interface, so users could interact with the model in real-time."
+
+},{
+
+"Host": "That’s a wide range of experience. Where do you want to go next?",
+
+"You": "For me, it’s about bringing all those experiences together — the frontend creativity, the backend depth, and the enterprise-level Java skills — into modern Java stacks with frameworks like Spring Boot, Angular, and React. That’s where I feel I can deliver the most impact."
+},{
+"Host": "Fantastic. Thanks for sharing You'r story.",
+
+"You": "Thanks for having me."
+}
+]

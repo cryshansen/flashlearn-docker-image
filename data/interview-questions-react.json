@@ -1,0 +1,142 @@
+[
+  {
+    "topic": "React",
+    "question": "What is a React component?",
+    "answer": "A <strong>function</strong> or <strong>class</strong> that <u>returns</u> <code>JSX</code> to <u>describe</u> what should <u>appear</u> on the screen.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "React",
+    "question": "What is the difference between a functional and class component?",
+    "answer": "<strong>Functional components</strong> were originally <strong>stateless</strong> (until <code>Hooks</code>), while <strong>class components</strong> <u>support</u> <strong>lifecycle methods</strong> and use <code>this</code> context.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "What is JSX?",
+    "answer": "<code>JSX</code> stands for <strong>JavaScript XML</strong>. It <u>allows</u> writing <strong>HTML-like syntax</strong> inside JavaScript.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "React",
+    "question": "What are props in React?",
+    "answer": "<strong>Props</strong> are <strong>inputs</strong> <u>passed</u> from parent to child components and are <strong>read-only</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "React",
+    "question": "What is state in React?",
+    "answer": "<strong>State</strong> is a built-in <strong>object</strong> that <u>stores</u> and <u>tracks</u> data that <u>changes</u> over time inside a component.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "React",
+    "question": "How do you update state in a class component?",
+    "answer": "By <u>calling</u> <code>this.setState({ key: value })</code>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "What is the useState hook?",
+    "answer": "It <u>adds</u> state to <strong>functional components</strong>: <code>const [count, setCount] = useState(0);</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "What is the useEffect hook?",
+    "answer": "It <u>performs</u> <strong>side effects</strong> in functional components (e.g., <u>fetching</u> data, <u>setting up</u> subscriptions).",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "How do you run useEffect only once?",
+    "answer": "<u>Pass</u> an <strong>empty dependency array</strong>: <code>useEffect(() => { ... }, [])</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "How do you handle a click event in React?",
+    "answer": "Use <code>onClick={() => handleClick()}</code> to <u>attach</u> an <strong>event handler</strong> in JSX.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "React",
+    "question": "How do you handle form input in React?",
+    "answer": "<u>Track</u> input value with <code>useState</code> and <u>update</u> on change: <code>&lt;input value={value} onChange={e =&gt; setValue(e.target.value)} /&gt;</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "What is componentDidMount?",
+    "answer": "A <strong>lifecycle method</strong> in class components that <u>runs</u> after the component is <u>mounted</u> to the DOM.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "What is conditional rendering?",
+    "answer": "<u>Render</u> different UI based on conditions using the <code>ternary operator</code>, <code>if</code>, or logical <code>&&</code>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "React",
+    "question": "Why is `key` important in a list?",
+    "answer": "<strong>Keys</strong> <u>help</u> React <u>identify</u> which <strong>items</strong> <u>changed</u>, <u>added</u>, or <u>removed</u> for efficient updating.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "What is React.memo?",
+    "answer": "<code>React.memo</code> is a <strong>higher-order component</strong> that <u>prevents</u> unnecessary re-renders if <strong>props</strong> haven't <u>changed</u>.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "React",
+    "question": "What is React Router?",
+    "answer": "A <strong>library</strong> that <u>enables</u> <strong>navigation and routing</strong> in React applications.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "How do you navigate between pages with React Router?",
+    "answer": "<u>Use</u> <code>&lt;Link to='/about'&gt;About&lt;/Link&gt;</code> or the <code>useNavigate()</code> hook for programmatic navigation.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "What is the Context API?",
+    "answer": "The <strong>Context API</strong> <u>provides</u> a way to <u>share</u> data globally without <strong>props drilling</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "How do you consume context in a functional component?",
+    "answer": "By <u>using</u> the <code>useContext(MyContext)</code> hook.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "React",
+    "question": "What is a custom hook?",
+    "answer": "A <strong>reusable function</strong> that <u>uses</u> built-in hooks and <u>encapsulates</u> shared logic across components.",
+    "difficulty": "hard",
+    "color": "danger"
+  }
+]

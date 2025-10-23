@@ -1,0 +1,68 @@
+{
+  "title": "Basic Puzzles",
+  "author": "Crystal Hansen",
+  "pages": [
+    {
+      "title": "String to Integer",
+      "problem": "Convert '123' into 123 without built-in parsing.",
+      "idea": "Subtract '0' to get digit value, multiply accumulator by 10, add digit.",
+      "code": "result = 0\nfor c in string:\n    digit = c - '0'\n    result = result * 10 + digit\nreturn result"
+    },
+    {
+      "title": "Reverse a String",
+      "problem": "'hello' → 'olleh'",
+      "idea": "Swap characters from ends inward OR build string backwards.",
+      "code": "result = ''\nfor i from len-1 down to 0:\n    result += s[i]"
+    },
+    {
+      "title": "Check Palindrome",
+      "problem": "'racecar' → true, 'hello' → false",
+      "idea": "Compare string with its reverse.",
+      "code": "left=0, right=len-1\nwhile left < right:\n    if s[left] != s[right]: return false\n    left++, right--\nreturn true"
+    },
+    {
+      "title": "Fibonacci Sequence",
+      "problem": "Print first N Fibonacci numbers",
+      "idea": "F(n) = F(n-1) + F(n-2)",
+      "code": "a = 0, b = 1\nfor i in 0..N:\n    print a\n    temp = a + b\n    a = b\n    b = temp"
+    },
+    {
+      "title": "Factorial",
+      "problem": "Compute N! = 1*2*...*N",
+      "idea": "Loop multiplying from 1 to N.",
+      "code": "result = 1\nfor i in 1..N:\n    result *= i"
+    },
+    {
+      "title": "Find Max in Array",
+      "problem": "[3, 9, 2, 5] → 9",
+      "idea": "Track current max while iterating",
+      "code": "max = arr[0]\nfor num in arr:\n    if num > max: max = num"
+    },
+    {
+      "title": "Count Characters",
+      "problem": "Count how many times each character appears in a string",
+      "idea": "Use a hash/dictionary to count frequencies",
+      "code": "counts = {}\nfor c in s: counts[c] = counts.get(c,0)+1"
+    },
+    {
+      "title": "Two Sum",
+      "problem": "Find two numbers in array that add to target",
+      "idea": "Use a set or map to store complements",
+      "code": "seen = {}\nfor i,num in arr:\n    if target-num in seen: return (seen[target-num], i)\n    seen[num] = i"
+    },
+    {
+      "title": "Reverse Integer",
+      "problem": "123 → 321",
+      "idea": "Extract last digit repeatedly and build result",
+      "code": "result = 0\nwhile n > 0:\n    digit = n % 10\n    result = result * 10 + digit\n    n = n // 10"
+    },
+    {
+      "title": "Check Prime",
+      "problem": "Is n prime?",
+      "idea": "Divide up to √n and check for factors",
+      "code": "if n < 2: return false\nfor i in 2..sqrt(n):\n    if n % i == 0: return false\nreturn true"
+    }
+  ]
+    
+  
+}

@@ -1,0 +1,84 @@
+{
+  "session" : "Photosynthesis",
+  "flashcards" : [ {
+    "difficulty" : "easy",
+    "question" : "What is the primary pigment involved in <strong>photosynthesis</strong>?",
+    "answer" : "The primary pigment is <strong>chlorophyll</strong>, which <u>absorbs</u> light energy.",
+    "color" : "success",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/1_answer.mp3",
+    "question_audio_path" : "audio/1/1_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "In which organelle does <strong>photosynthesis</strong> mainly occur?",
+    "answer" : "<strong>Photosynthesis</strong> mainly occurs in the <strong>chloroplast</strong> of plant cells.",
+    "color" : "success",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/2_answer.mp3",
+    "question_audio_path" : "audio/1/2_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What are the two main stages of <strong>photosynthesis</strong>?",
+    "answer" : "The two main stages are the <strong>light-dependent reactions</strong> and <strong>Calvin cycle</strong>.",
+    "color" : "warning",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/3_answer.mp3",
+    "question_audio_path" : "audio/1/3_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What does the <strong>light-dependent reactions</strong> convert light energy into?",
+    "answer" : "The <strong>light-dependent reactions</strong> <u>convert</u> light energy into <strong>ATP</strong> and <strong>NADPH</strong>.",
+    "color" : "warning",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/4_answer.mp3",
+    "question_audio_path" : "audio/1/4_question.mp3"
+  }, {
+    "difficulty" : "easy",
+    "question" : "What gas is <u>used</u> in the <strong>Calvin cycle</strong>?",
+    "answer" : "The gas <strong>carbon dioxide (CO2)</strong> is <u>used</u> in the <strong>Calvin cycle</strong>.",
+    "color" : "success",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/5_answer.mp3",
+    "question_audio_path" : "audio/1/5_question.mp3"
+  }, {
+    "difficulty" : "hard",
+    "question" : "What is the overall equation for <strong>photosynthesis</strong>?",
+    "answer" : "<em>The overall equation is 6CO2 + 6H2O + light energy → C6H12O6 + 6O2.</em>",
+    "color" : "danger",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/6_answer.mp3",
+    "question_audio_path" : "audio/1/6_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "Which wavelengths of light are most effective for <strong>photosynthesis</strong>?",
+    "answer" : "Red and blue wavelengths are most effective for <strong>photosynthesis</strong>.",
+    "color" : "warning",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/7_answer.mp3",
+    "question_audio_path" : "audio/1/7_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "What are the end products of the <strong>Calvin cycle</strong>?",
+    "answer" : "The end products are <strong>glucose</strong>, different types of sugars, and other carbohydrates.",
+    "color" : "warning",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/8_answer.mp3",
+    "question_audio_path" : "audio/1/8_question.mp3"
+  }, {
+    "difficulty" : "hard",
+    "question" : "What role does <strong>water</strong> play in <strong>photosynthesis</strong>?",
+    "answer" : "<strong>Water</strong> is split to <u>provide</u> electrons and protons in the <strong>light reactions</strong>.",
+    "color" : "danger",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/9_answer.mp3",
+    "question_audio_path" : "audio/1/9_question.mp3"
+  }, {
+    "difficulty" : "medium",
+    "question" : "How does <strong>photosynthesis</strong> benefit the ecosystem?",
+    "answer" : "<strong>Photosynthesis</strong> <u>produces</u> oxygen and <u>stores</u> energy in glucose for other organisms.",
+    "color" : "warning",
+    "topic" : "Photosynthesis",
+    "answer_audio_path" : "audio/1/10_answer.mp3",
+    "question_audio_path" : "audio/1/10_question.mp3"
+  } ]
+}

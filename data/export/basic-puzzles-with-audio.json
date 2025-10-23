@@ -1,0 +1,95 @@
+{
+  "title" : "Basic Puzzles",
+  "author" : "Crystal Hansen",
+  "pages" : [ {
+    "title" : "String to Integer",
+    "problem" : "Convert '123' into 123 without built-in parsing.",
+    "idea" : "Subtract '0' to get digit value, multiply accumulator by 10, add digit.",
+    "code" : "result = 0\nfor c in string:\n    digit = c - '0'\n    result = result * 10 + digit\nreturn result",
+    "title_audio" : "puzzle_t_1-output.mp3",
+    "problem_audio" : "puzzle_p_1-output.mp3",
+    "idea_audio" : "puzzle_i_1-output.mp3",
+    "code_audio" : "puzzle_c_1-output.mp3"
+  }, {
+    "title" : "Reverse a String",
+    "problem" : "'hello' → 'olleh'",
+    "idea" : "Swap characters from ends inward OR build string backwards.",
+    "code" : "result = ''\nfor i from len-1 down to 0:\n    result += s[i]",
+    "title_audio" : "puzzle_t_2-output.mp3",
+    "problem_audio" : "puzzle_p_2-output.mp3",
+    "idea_audio" : "puzzle_i_2-output.mp3",
+    "code_audio" : "puzzle_c_2-output.mp3"
+  }, {
+    "title" : "Check Palindrome",
+    "problem" : "'racecar' → true, 'hello' → false",
+    "idea" : "Compare string with its reverse.",
+    "code" : "left=0, right=len-1\nwhile left < right:\n    if s[left] != s[right]: return false\n    left++, right--\nreturn true",
+    "title_audio" : "puzzle_t_3-output.mp3",
+    "problem_audio" : "puzzle_p_3-output.mp3",
+    "idea_audio" : "puzzle_i_3-output.mp3",
+    "code_audio" : "puzzle_c_3-output.mp3"
+  }, {
+    "title" : "Fibonacci Sequence",
+    "problem" : "Print first N Fibonacci numbers",
+    "idea" : "F(n) = F(n-1) + F(n-2)",
+    "code" : "a = 0, b = 1\nfor i in 0..N:\n    print a\n    temp = a + b\n    a = b\n    b = temp",
+    "title_audio" : "puzzle_t_4-output.mp3",
+    "problem_audio" : "puzzle_p_4-output.mp3",
+    "idea_audio" : "puzzle_i_4-output.mp3",
+    "code_audio" : "puzzle_c_4-output.mp3"
+  }, {
+    "title" : "Factorial",
+    "problem" : "Compute N! = 1*2*...*N",
+    "idea" : "Loop multiplying from 1 to N.",
+    "code" : "result = 1\nfor i in 1..N:\n    result *= i",
+    "title_audio" : "puzzle_t_5-output.mp3",
+    "problem_audio" : "puzzle_p_5-output.mp3",
+    "idea_audio" : "puzzle_i_5-output.mp3",
+    "code_audio" : "puzzle_c_5-output.mp3"
+  }, {
+    "title" : "Find Max in Array",
+    "problem" : "[3, 9, 2, 5] → 9",
+    "idea" : "Track current max while iterating",
+    "code" : "max = arr[0]\nfor num in arr:\n    if num > max: max = num",
+    "title_audio" : "puzzle_t_6-output.mp3",
+    "problem_audio" : "puzzle_p_6-output.mp3",
+    "idea_audio" : "puzzle_i_6-output.mp3",
+    "code_audio" : "puzzle_c_6-output.mp3"
+  }, {
+    "title" : "Count Characters",
+    "problem" : "Count how many times each character appears in a string",
+    "idea" : "Use a hash/dictionary to count frequencies",
+    "code" : "counts = {}\nfor c in s: counts[c] = counts.get(c,0)+1",
+    "title_audio" : "puzzle_t_7-output.mp3",
+    "problem_audio" : "puzzle_p_7-output.mp3",
+    "idea_audio" : "puzzle_i_7-output.mp3",
+    "code_audio" : "puzzle_c_7-output.mp3"
+  }, {
+    "title" : "Two Sum",
+    "problem" : "Find two numbers in array that add to target",
+    "idea" : "Use a set or map to store complements",
+    "code" : "seen = {}\nfor i,num in arr:\n    if target-num in seen: return (seen[target-num], i)\n    seen[num] = i",
+    "title_audio" : "puzzle_t_8-output.mp3",
+    "problem_audio" : "puzzle_p_8-output.mp3",
+    "idea_audio" : "puzzle_i_8-output.mp3",
+    "code_audio" : "puzzle_c_8-output.mp3"
+  }, {
+    "title" : "Reverse Integer",
+    "problem" : "123 → 321",
+    "idea" : "Extract last digit repeatedly and build result",
+    "code" : "result = 0\nwhile n > 0:\n    digit = n % 10\n    result = result * 10 + digit\n    n = n // 10",
+    "title_audio" : "puzzle_t_9-output.mp3",
+    "problem_audio" : "puzzle_p_9-output.mp3",
+    "idea_audio" : "puzzle_i_9-output.mp3",
+    "code_audio" : "puzzle_c_9-output.mp3"
+  }, {
+    "title" : "Check Prime",
+    "problem" : "Is n prime?",
+    "idea" : "Divide up to √n and check for factors",
+    "code" : "if n < 2: return false\nfor i in 2..sqrt(n):\n    if n % i == 0: return false\nreturn true",
+    "title_audio" : "puzzle_t_10-output.mp3",
+    "problem_audio" : "puzzle_p_10-output.mp3",
+    "idea_audio" : "puzzle_i_10-output.mp3",
+    "code_audio" : "puzzle_c_10-output.mp3"
+  } ]
+}

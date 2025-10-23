@@ -1,0 +1,100 @@
+[
+  {
+    "topic": "Testing Fundamentals",
+    "question": "What is unit testing?",
+    "answer": "<strong>Unit testing</strong> <u>verifies</u> a single <strong>unit of code</strong> (method, function, component) in isolation to <u>ensure</u> it behaves as expected.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Angular Testing",
+    "question": "What is the purpose of Jasmine in Angular testing?",
+    "answer": "<strong>Jasmine</strong> is a <strong>behavior-driven development</strong> framework used to <u>write</u> and <u>run</u> <strong>unit tests</strong> in Angular with <strong>describe()</strong>, <strong>it()</strong>, and <strong>expect()</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is JUnit used for in Java?",
+    "answer": "<strong>JUnit</strong> is a <strong>unit testing framework</strong> for Java that <u>allows</u> developers to <u>write</u> and <u>run</u> repeatable tests, <u>using</u> annotations like <strong>@Test</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Angular Testing",
+    "question": "What is TestBed in Angular testing?",
+    "answer": "<strong>TestBed</strong> is Angular’s primary <strong>testing utility</strong> that <u>creates</u> a <strong>testing module</strong> to <u>configure</u> and <u>instantiate</u> components, directives, and services in isolation.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is the role of assertions in JUnit?",
+    "answer": "<strong>Assertions</strong> like <strong>assertEquals()</strong> and <strong>assertTrue()</strong> <u>verify</u> expected outcomes and <u>throw</u> an <strong>AssertionError</strong> when <u>failing</u>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Angular Testing",
+    "question": "How do you test an Angular service?",
+    "answer": "You <u>use</u> <strong>TestBed.configureTestingModule()</strong> to <u>provide</u> the service, then <u>inject</u> it with <strong>TestBed.inject()</strong> and <u>assert</u> results using <strong>expect()</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is Mockito used for?",
+    "answer": "<strong>Mockito</strong> is a <strong>mocking framework</strong> that <u>creates</u> fake objects to <u>simulate</u> dependencies, enabling isolation of the class under test.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Angular Testing",
+    "question": "What is a spy in Jasmine?",
+    "answer": "A <strong>spy</strong> <u>monitors</u> calls to a method and can <u>replace</u> its behavior, <u>created</u> with <strong>spyOn(object, 'method')</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "How do you create a mock with Mockito?",
+    "answer": "You <u>use</u> <strong>Mockito.mock(ClassName.class)</strong> or <strong>@Mock</strong> and <u>define</u> behavior with <strong>when(...).thenReturn(...)</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Angular Testing",
+    "question": "How do you mock HTTP requests in Angular?",
+    "answer": "You <u>use</u> <strong>HttpClientTestingModule</strong> with <strong>HttpTestingController</strong> to <u>intercept</u> requests, <u>flush</u> mock data, and <u>verify</u> no pending calls remain.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "How do you test exceptions in JUnit?",
+    "answer": "You <u>use</u> <strong>assertThrows(ExpectedException.class, () -> { ... })</strong> in JUnit 5 or <strong>@Test(expected = Exception.class)</strong> in JUnit 4.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Angular Testing",
+    "question": "What is the difference between async() and fakeAsync() in Angular testing?",
+    "answer": "<strong>async()</strong> <u>wraps</u> a test to <u>wait</u> for async tasks, while <strong>fakeAsync()</strong> <u>simulates</u> time passing and <u>requires</u> <strong>tick()</strong>.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java Testing",
+    "question": "What is parameterized testing in JUnit?",
+    "answer": "<strong>Parameterized testing</strong> <u>runs</u> the same test with different inputs, <u>using</u> <strong>@ParameterizedTest</strong> and <strong>@ValueSource</strong> or <strong>@CsvSource</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Testing Fundamentals",
+    "question": "What’s the difference between unit testing and integration testing?",
+    "answer": "<strong>Unit testing</strong> <u>tests</u> a single unit in isolation, while <strong>integration testing</strong> <u>verifies</u> multiple units <em>working together</em>.",
+    "difficulty": "easy",
+    "color": "success"
+  }
+]

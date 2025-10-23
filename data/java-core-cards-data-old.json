@@ -1,0 +1,134 @@
+[
+  {
+    "topic": "Core Java",
+    "question": "What is the Java Memory Model and how does garbage collection work?",
+    "answer": "The Java Memory Model defines how threads interact with memory. The JVM manages memory with the heap and stack, and garbage collection reclaims memory from unreachable objects using algorithms like G1, CMS, or Serial GC."
+  },
+  {
+    "topic": "Core Java",
+    "question": "What is the difference between HashMap and TreeMap?",
+    "answer": "HashMap uses hashing and provides O(1) lookup, whereas TreeMap is a Red-Black tree providing O(log n) operations with sorted keys."
+  },
+  {
+    "topic": "Core Java",
+    "question": "What is the Reflections API used for?",
+    "answer": "It allows inspection and modification of classes, methods, and fields at runtime — used in frameworks like Spring for dependency injection and scanning annotations."
+  },
+  {
+    "topic": "Core Java",
+    "question": "How do Java 8 Streams improve code?",
+    "answer": "They allow functional-style operations on collections, enabling concise, readable, and parallelizable code using methods like map, filter, reduce."
+  },
+  {
+    "topic": "Core Java",
+    "question": "What is functional programming in Java?",
+    "answer": "It emphasizes immutability, pure functions, and stateless behavior. Java 8 introduced lambdas and functional interfaces (e.g., Function, Predicate) to support this style."
+  },
+  {
+    "topic": "Design Principles",
+    "question": "What is the MVC pattern and how is it applied?",
+    "answer": "Model-View-Controller separates concerns: Model handles data, View renders UI, Controller manages input. Spring MVC applies this by mapping URLs to controller methods."
+  },
+  {
+    "topic": "Design Principles",
+    "question": "What is caching and how can it improve performance?",
+    "answer": "Caching stores frequently accessed data in memory to avoid recomputation or slow I/O. In Spring, you can use @Cacheable with cache providers like Ehcache or Redis."
+  },
+  {
+    "topic": "Design Principles",
+    "question": "What is recursion and when is it used?",
+    "answer": "Recursion is when a function calls itself. It’s used for problems with subproblems, like tree traversal, factorial, or divide-and-conquer algorithms."
+  },
+  {
+    "topic": "Design Principles",
+    "question": "What is multithreading and how does Java support it?",
+    "answer": "Multithreading allows concurrent execution. Java provides Threads, Runnable, Callable, and Executors API to manage asynchronous tasks."
+  },
+  {
+    "topic": "Design Principles",
+    "question": "Name a few common design patterns and their use cases.",
+    "answer": "Singleton (shared instance), Factory (object creation), Observer (event handling), Decorator (extending behavior), Strategy (interchangeable algorithms)."
+  },
+  {
+    "topic": "Algorithms",
+    "question": "What is the time complexity of binary search?",
+    "answer": "O(log n) — it halves the search space at each step."
+  },
+  {
+    "topic": "Algorithms",
+    "question": "What is the difference between BFS and DFS?",
+    "answer": "BFS explores level by level using a queue, useful for shortest path. DFS explores depth-first using a stack or recursion."
+  },
+  {
+    "topic": "Algorithms",
+    "question": "What is a divide and conquer algorithm?",
+    "answer": "It splits a problem into smaller subproblems, solves them recursively, and combines results. Examples: Merge Sort, Quick Sort."
+  },
+  {
+    "topic": "Data Structures",
+    "question": "What is the difference between ArrayList and LinkedList in Java?",
+    "answer": "ArrayList provides fast random access (O(1)), LinkedList is better for insertions/deletions (O(1) if position known)."
+  },
+  {
+    "topic": "Data Structures",
+    "question": "What is a hash table?",
+    "answer": "A data structure that maps keys to values using a hash function. Provides average O(1) access time."
+  },
+  {
+    "topic": "Graphs",
+    "question": "How do you represent a graph in code?",
+    "answer": "Using adjacency lists (Map<Node, List<Node>>), adjacency matrix, or edge list depending on density and access needs."
+  },
+  {
+    "topic": "Graphs",
+    "question": "What is Dijkstra's algorithm used for?",
+    "answer": "It finds the shortest path from a source to all nodes in a weighted graph with non-negative edges."
+  },
+  {
+    "topic": "Graphs",
+    "question": "What is topological sorting?",
+    "answer": "A linear ordering of a DAG's nodes such that for every directed edge u → v, u comes before v. Used in dependency resolution."
+  },
+  {
+    "topic": "Multithreading",
+    "question": "What is a race condition?",
+    "answer": "It occurs when two threads access shared data concurrently and try to change it at the same time without synchronization."
+  },
+  {
+    "topic": "Multithreading",
+    "question": "What is a deadlock?",
+    "answer": "A situation where two or more threads are blocked forever, each waiting on a resource held by the other."
+  },
+  {
+    "topic": "Multithreading",
+    "question": "What is the difference between synchronized block and synchronized method in Java?",
+    "answer": "Both prevent concurrent access, but synchronized block can limit locking scope for better performance."
+  },
+  {
+    "topic": "Caching",
+    "question": "What is the difference between write-through and write-back caching?",
+    "answer": "Write-through writes data to both cache and DB instantly; write-back delays DB write until eviction for performance."
+  },
+  {
+    "topic": "Caching",
+    "question": "What is cache eviction and name common strategies?",
+    "answer": "Eviction removes old entries when cache is full. Common strategies: LRU (Least Recently Used), FIFO, LFU (Least Frequently Used)."
+  },
+  {
+    "topic": "Recursion",
+    "question": "What is tail recursion?",
+    "answer": "A recursion where the recursive call is the last statement. It can be optimized by the compiler to reuse the current stack frame."
+  },
+  {
+    "topic": "Recursion",
+    "question": "How do you prevent stack overflow in recursive functions?",
+    "answer": "Use tail recursion if supported, limit depth, or convert to iteration (loop-based solution)."
+  },
+  {
+    "topic": "MVC",
+    "question": "What are the responsibilities of each layer in MVC?",
+    "answer": "Model handles data and logic, View renders UI, Controller handles input and orchestrates between model and view."
+  }
+]
+
+

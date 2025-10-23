@@ -1,0 +1,115 @@
+[
+  {
+    "topic": "Java Basics",
+    "question": "Write a simple Java class `Person` with fields `name` and `age`, and a method `greet()` that returns `Hello, my name is [name]`.",
+    "answer": "public class Person {\n    private String name;\n    private int age;\n\n    public Person(String name, int age) {\n        this.name = name;\n        this.age = age;\n    }\n\n    public String greet() {\n        return \"Hello, my name is \" + name;\n    }\n}",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "Write a Java `for` loop that prints numbers 1 to 5.",
+    "answer": "for (int i = 1; i <= 5; i++) {\n    System.out.println(i);\n}",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring Boot",
+    "question": "Create a basic Spring Boot application with a REST controller that returns `\"Hello World\"` on `/hello`.",
+    "answer": "@RestController\n@SpringBootApplication\npublic class DemoApp {\n\n    public static void main(String[] args) {\n        SpringApplication.run(DemoApp.class, args);\n    }\n\n    @GetMapping(\"/hello\")\n    public String hello() {\n        return \"Hello World\";\n    }\n}",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring Boot",
+    "question": "Create a Spring Boot REST controller with a `GET /users/{id}` endpoint that returns a `User` object.",
+    "answer": "@RestController\n@RequestMapping(\"/users\")\npublic class UserController {\n\n    @GetMapping(\"/{id}\")\n    public User getUser(@PathVariable Long id) {\n        return new User(id, \"John Doe\");\n    }\n}",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "JDBC",
+    "question": "Use JDBC to connect to a MySQL database and retrieve all rows from a `users` table.",
+    "answer": "Connection conn = DriverManager.getConnection(url, user, password);\nStatement stmt = conn.createStatement();\nResultSet rs = stmt.executeQuery(\"SELECT * FROM users\");\n\nwhile (rs.next()) {\n    System.out.println(rs.getString(\"name\"));\n}\n\nrs.close();\nstmt.close();\nconn.close();",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "JDBC",
+    "question": "Write a method to insert a new user into a `users` table using a `PreparedStatement`.",
+    "answer": "public void addUser(String name) throws SQLException {\n    String sql = \"INSERT INTO users (name) VALUES (?)\";\n    try (Connection conn = DriverManager.getConnection(url, user, password);\n         PreparedStatement stmt = conn.prepareStatement(sql)) {\n        stmt.setString(1, name);\n        stmt.executeUpdate();\n    }\n}",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring REST API",
+    "question": "Write a Spring REST controller that handles a POST request to create a new `Book`.",
+    "answer": "@RestController\n@RequestMapping(\"/books\")\npublic class BookController {\n\n    @PostMapping\n    public Book createBook(@RequestBody Book book) {\n        // Assume it's saved to DB\n        return book;\n    }\n}",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Spring REST API",
+    "question": "Write a Spring Boot controller method that returns a list of all books.",
+    "answer": "@GetMapping(\"/books\")\npublic List<Book> getAllBooks() {\n    return Arrays.asList(\n        new Book(1L, \"Java 101\"),\n        new Book(2L, \"Spring Boot in Action\")\n    );\n}",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Collections",
+    "question": "Use a Java `HashMap` to store three users with their IDs and loop through to print each entry.",
+    "answer": "Map<Integer, String> users = new HashMap<>();\nusers.put(1, \"Alice\");\nusers.put(2, \"Bob\");\nusers.put(3, \"Charlie\");\n\nfor (Map.Entry<Integer, String> entry : users.entrySet()) {\n    System.out.println(entry.getKey() + \": \" + entry.getValue());\n}",
+    "difficulty": "easy",
+    "color": "green"
+  },
+  {
+    "topic": "Java Streams",
+    "question": "Use Java Streams to filter a list of names to include only those that start with 'A' and print them.",
+    "answer": "List<String> names = Arrays.asList(\"Alice\", \"Bob\", \"Amanda\");\nnames.stream()\n     .filter(name -> name.startsWith(\"A\"))\n     .forEach(System.out::println);",
+    "difficulty": "medium",
+    "color": "yellow"
+  },
+  {
+    "topic": "Exception Handling",
+    "question": "Write a method that catches a divide-by-zero exception and prints `Cannot divide by zero`.",
+    "answer": "public void safeDivide(int a, int b) {\n    try {\n        int result = a / b;\n        System.out.println(result);\n    } catch (ArithmeticException e) {\n        System.out.println(\"Cannot divide by zero\");\n    }\n}",
+    "difficulty": "easy",
+    "color": "green"
+  },
+  {
+    "topic": "Exception Handling",
+    "question": "Create a custom exception `InvalidAgeException` and throw it if age is less than 0.",
+    "answer": "public class InvalidAgeException extends Exception {\n    public InvalidAgeException(String msg) {\n        super(msg);\n    }\n}\n\npublic void checkAge(int age) throws InvalidAgeException {\n    if (age < 0) {\n        throw new InvalidAgeException(\"Age cannot be negative\");\n    }\n}",
+    "difficulty": "medium",
+    "color": "yellow"
+  },
+  {
+    "topic": "Spring Data JPA",
+    "question": "Define a JPA entity `User` with fields `id`, `name`, and `email`.",
+    "answer": "@Entity\npublic class User {\n  @Id @GeneratedValue\n  private Long id;\n  private String name;\n  private String email;\n  // getters and setters\n}",
+    "difficulty": "easy",
+    "color": "green"
+  },
+  {
+    "topic": "Spring Data JPA",
+    "question": "Create a `UserRepository` interface that extends `JpaRepository`.",
+    "answer": "public interface UserRepository extends JpaRepository<User, Long> {\n    List<User> findByName(String name);\n}",
+    "difficulty": "easy",
+    "color": "green"
+  },
+  {
+    "topic": "Spring Security",
+    "question": "Configure Spring Security to require authentication for all endpoints.",
+    "answer": "@Configuration\n@EnableWebSecurity\npublic class SecurityConfig extends WebSecurityConfigurerAdapter {\n  @Override\n  protected void configure(HttpSecurity http) throws Exception {\n    http.authorizeRequests().anyRequest().authenticated()\n        .and().formLogin();\n  }\n}",
+    "difficulty": "medium",
+    "color": "yellow"
+  },
+  {
+    "topic": "Spring Security",
+    "question": "Create an in-memory user with username `admin` and password `admin123`.",
+    "answer": "@Bean\npublic UserDetailsService userDetailsService() {\n  UserDetails user = User.withDefaultPasswordEncoder()\n      .username(\"admin\")\n      .password(\"admin123\")\n      .roles(\"ADMIN\")\n      .build();\n  return new InMemoryUserDetailsManager(user);\n}",
+    "difficulty": "medium",
+    "color": "yellow"
+  }
+]
+

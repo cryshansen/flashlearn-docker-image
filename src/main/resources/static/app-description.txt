@@ -1,0 +1,594 @@
+Application Notes for review purposes and studying 
+
+Please see the image folder flash-learn-spring-boot under src/main/resources/static/images/flash-learn-spring-boot screenshots of the mermaid flowcharts
+
+1. Application Startup
+	Spring Boot main class (@SpringBootApplication) is executed:
+	Scans all subpackages for @Component, @Service, @Repository, @Controller, @Configuration, etc.
+	Registers them as Spring Beans in the ApplicationContext.
+	Starts the embedded Tomcat/Jetty server (default Tomcat) to listen on localhost:8080.
+	Configuration properties are loaded from:
+	application.yml or application.properties.
+	Environment variables (e.g., ${OPENAI_API_KEY}).
+	Any @ConfigurationProperties beans (like your OpenAiConfig) are populated here.
+	Bean creation order:
+		Beans annotated with @Component, @Service, @Repository are instantiated.
+		Beans annotated with @Configuration are processed, including your SecurityConfig and OpenAiConfig.
+		Beans with dependencies (@Autowired) are injected here.
+
+2. Spring Security Auto-Configuration
+
+Originally:
+	Including spring-boot-starter-security triggers auto-configuration:
+	Generates a default UserDetailsService with a random password.
+	Enables HTTP Basic authentication and login page by default.
+	This is why you saw the random password in the console.
+What we did:
+	Added a custom SecurityConfig:
+	Disabled CSRF: http.csrf().disable()
+	Disabled form login: formLogin().disable()
+	Disabled HTTP Basic: httpBasic().disable()
+	Allowed all requests: authorizeHttpRequests().anyRequest().permitAll()
+
+Still, the auto-generated password appeared because:
+Spring Boot’s UserDetailsServiceAutoConfiguration creates a default user even if auth is disabled, unless you provide a custom UserDetailsService or spring.security.user.* in YAML.
+We fixed it by either:
+	Defining a dummy UserDetailsService bean with a no-op user.
+	Or removing the dependency entirely (if no security needed).
+
+3. Controller and Service Lifecycle
+
+Controllers (@RestController):
+FlashcardController and TextToSpeechController are instantiated.
+Dependencies (FlashcardService, TtsService) are injected via:
+@Autowired  Or constructor injection.
+The Spring container knows how to resolve dynamic beans (like fetching a TTS provider from ApplicationContext).
+
+Services (@Service):
+FlashcardService, StudyService, OpenAiService, TtsService implementations are created.
+Any @Value annotations (@Value("${openai.apiKey}")) are injected with values from YAML.
+
+Repositories (@Repository):
+Typically Spring Data JPA repositories are interfaces.
+Spring dynamically creates beans at startup.
+You had a custom StudySessionRepository that wasn’t annotated with @Repository — this caused bean injection errors before.
+
+4. ApplicationContext and Dependency Injection
+
+The ApplicationContext is the container that:
+Holds all beans.
+Manages their lifecycle.
+Resolves dependencies (@Autowired, constructor injection, @Qualifier, etc.).
+Your dynamic TTS provider lookup uses ctx.getBean(beanName) — taking advantage of the container at runtime to fetch the correct implementation.
+
+5. Request Handling Lifecycle
+Incoming HTTP request to /api/flashcards/cues or /api/tts/OpenAI.
+DispatcherServlet routes the request to the matching controller method.
+Controller method executes, calling service layer.
+Service layer calls OpenAI API or internal logic.
+Response is returned to DispatcherServlet, which serializes it (JSON or audio bytes) and sends it back to the client.
+
+6. Key Changes We Made
+Issue	Change / Fix	Spring Mechanism
+Random password generated	Added custom SecurityConfig + dummy UserDetailsService	Overrides Spring Security auto-configuration
+401 Unauthorized on Postman	Disabled security / allowed all requests	permitAll() in filter chain
+Bean injection failure for StudyService	Fixed repository bean definition	Beans need @Repository or proper Spring-managed bean
+OpenAiConfig injection failure	Added @ConfigurationPropertiesScan / @EnableConfigurationProperties	Spring populates beans from YAML
+Dynamic TTS provider selection	Removed @Qualifier("${tts.provider}")	Looked up beans in ApplicationContext at runtime
+✅ Correct Spring Boot Lifecycle for your app now
+
+Startup: main class → ApplicationContext created → beans scanned & instantiated.
+Configuration loaded: YAML properties mapped → OpenAiConfig populated.
+Spring Security applied: custom filter chain disables auth → no auto-generated password.
+Controllers & services ready: dependencies injected → ready to handle requests.
+HTTP request received: DispatcherServlet → controller → service → external API → response returned.
+Shutdown: Spring gracefully closes ApplicationContext → beans destroyed.
+
+
+
+
+Layered Architecture – Flow Overview
+
+1. Client Layer (Angular / Postman / Browser)
+Sends HTTP requests (GET/POST) to endpoints like /api/flashcards/cues or /api/study/generate.
+Receives JSON responses or audio bytes (TTS).
+
+2. Controller Layer (@RestController)
+FlashcardController → handles /api/flashcards endpoints.
+StudyController → handles /api/study.
+TextToSpeechController → handles /api/tts.
+Responsibilities: accept requests, validate input, call service layer, return responses.
+
+3. Service Layer (@Service)
+
+FlashcardService → generates memory cues via OpenAI API.
+StudyService → orchestrates study session creation, saves session, generates flashcards.
+TtsService / OpenAiTtsService / GoogleTtsService → generate audio from text.
+Responsibilities: business logic, orchestration, external API calls, transformations.
+
+4. Repository Layer (@Repository)
+
+FlashcardRepository, StudySessionRepository, UserRepository.
+Responsibilities: data persistence (database, session tracking, user info).
+
+5. External API / TTS Integration
+
+OpenAI API → chat/completions (flashcards), TTS models.
+Google TTS → optional audio generation.
+AWS Polly → optional audio generation.
+
+6. Configuration Layer (@Configuration)
+
+OpenAiConfig → binds application.yml keys.
+SecurityConfig → disables security for development/Postman.
+
+7. Data Transfer Objects (DTOs)
+StudySessionDto → structured data sent back to client.
+
+
+Flow Summary:
+
+[Client] → [Controller] → [Service] → [Repository / External API] → [Response DTO] → [Client]
+Optional branches: Service calls TTS provider for audio.
+Security intercepts requests if enabled (disabled in your setup).
+
+Mermaid Charts
+
+flowchart TD
+    A[Client (Angular / Postman / Browser)] -->|HTTP Request| B[Controller Layer]
+
+    B -->|Calls| C[Service Layer]
+    C -->|Uses| D[Repository Layer]
+    C -->|Calls| E[External APIs (OpenAI / Google TTS / AWS Polly)]
+
+    D -->|DB Persistence| F[(Database)]
+    E -->|Returns Audio/JSON| C
+
+    C -->|Returns DTOs| B
+    B -->|HTTP Response| A
+
+    subgraph Controller Layer
+        B1[FlashcardController]
+        B2[StudyController]
+        B3[TextToSpeechController]
+    end
+
+    subgraph Service Layer
+        C1[FlashcardService]
+        C2[StudyService]
+        C3[TtsService / OpenAiTtsService / GoogleTtsService]
+    end
+
+    subgraph Repository Layer
+        D1[FlashcardRepository]
+        D2[StudySessionRepository]
+        D3[UserRepository]
+    end
+
+    style A fill:#8809ab,stroke:#333,stroke-width:2px
+    style B fill:#7171bf,stroke:#333,stroke-width:2px
+    style C fill:#64a364,stroke:#333,stroke-width:2px
+    style D fill:#ffb,stroke:#333,stroke-width:2px
+    style E fill:#b36b6b,stroke:#333,stroke-width:2px
+    style F fill:#eee,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+
+
+
+
+More detailed chart with dto  layer flowchart TD
+    %% Client Layer
+    A[Client Angular / Postman / Browser] -->|HTTP Request| B[Controller Layer]
+
+    %% Controller Layer
+    subgraph Controller Layer
+        B1[FlashcardController]
+        B2[StudyController]
+        B3[TextToSpeechController]
+    end
+
+    B --> B1
+    B --> B2
+    B --> B3
+
+    %% Service Layer
+    subgraph Service Layer
+        C1[FlashcardService]
+        C2[StudyService]
+        C3[TtsService / OpenAiTtsService / GoogleTtsService / AWSPollyTtsService]
+    end
+
+    B1 -->|Call generate cues| C1
+    B2 -->|Call generate study guide| C2
+    B3 -->|Call synthesize speech| C3
+
+    %% Repository Layer
+    subgraph Repository Layer
+        D1[FlashcardRepository]
+        D2[StudySessionRepository]
+        D3[UserRepository]
+    end
+
+    C1 -->|Save/Fetch Flashcards| D1
+    C2 -->|Save/Fetch Study Sessions| D2
+    C2 -->|Fetch Users| D3
+
+    %% External APIs
+    subgraph External APIs
+        E1[OpenAI API Chat]
+        E2[OpenAI API TTS]
+        E3[Google TTS]
+        E4[AWS Polly]
+    end
+
+    C1 -->|Send prompt| E1
+    C3 -->|Generate audio| E2
+    C3 -->|Generate audio| E3
+    C3 -->|Generate audio| E4
+
+    %% Database
+    subgraph Database
+        F[(Database)]
+    end
+
+    D1 -->|Persist Flashcards| F
+    D2 -->|Persist Study Sessions| F
+    D3 -->|Persist Users| F
+
+    %% DTO Layer
+    subgraph DTO / Response
+        G1[StudySessionDto]
+        G2[Flashcard DTOs]
+        G3[Audio Bytes]
+    end
+
+    C1 --> G2
+    C2 --> G1
+    C3 --> G3
+
+    G1 --> B2
+    G2 --> B1
+    G3 --> B3
+    B -->|HTTP Response| A
+
+    %% Styles
+   style A fill:#8809ab,stroke:#333,stroke-width:2px
+    style B fill:#7171bf,stroke:#333,stroke-width:2px
+    style C fill:#64a364,stroke:#333,stroke-width:2px
+    style D fill:#ffb,stroke:#333,stroke-width:2px
+    style E fill:#b36b6b,stroke:#333,stroke-width:2px
+    style F fill:#eee,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+    style G fill:#999962,stroke:#333,stroke-width:2px
+
+
+Flashcard specific flowchart 
+FlashcardController Flow – Layered Breakdown
+1. Client Layer
+
+Origin of request: Angular frontend, Postman, or any HTTP client.
+
+Request example:
+
+POST http://localhost:8080/api/flashcards/cues
+Content-Type: application/json
+
+[
+  {"question":"What is Spring Boot?","answer":"A Java framework for building microservices"}
+]
+
+2. Controller Layer
+
+Class: FlashcardController
+
+Annotation: @RestController
+
+Mapping: /api/flashcards → @PostMapping("/cues")
+
+Responsibilities:
+
+Accept JSON payload of flashcards (List<Flashcard>)
+
+Call service layer to generate memory cues
+
+Return response as JSON (Map<String, String> with key "cues")
+
+Code snippet:
+
+@PostMapping("/cues")
+public ResponseEntity<?> getCues(@RequestBody List<Flashcard> flashcards) {
+    String cues = flashcardService.generateCues(flashcards);
+    return ResponseEntity.ok(Map.of("cues", cues));
+}
+
+3. Service Layer
+
+Class: FlashcardService
+
+Annotation: @Service
+
+Responsibilities:
+
+Build prompt for OpenAI API
+
+Send HTTP request to OpenAI Chat API
+
+Receive generated cues as JSON
+
+Return result to controller
+
+Flow:
+
+Receive List<Flashcard> from controller
+
+Generate text prompt: "Here are flashcards: ... Generate memory cues"
+
+Call OpenAI API (Chat) → returns response
+
+Return string of cues to controller
+
+4. Repository Layer
+
+Optional in this case – if we persist flashcards, use FlashcardRepository
+
+Annotation: @Repository
+
+Responsibility: Save flashcards for later retrieval
+
+5. External API
+
+OpenAI Chat API
+
+POST https://api.openai.com/v1/chat/completions
+
+Header: Authorization: Bearer <apiKey>
+
+Body includes model (gpt-4o-mini) and prompt
+
+6. DTO Layer
+
+Not strictly needed for FlashcardController here, unless you want a separate FlashcardResponseDto
+
+Currently returns simple JSON: {"cues": "...generated cues..."}
+
+7. Response
+
+Controller returns JSON to client
+
+Angular app receives cues, displays them in UI
+
+
+flowchart TD
+    A[Client (Angular / Postman)] -->|POST /api/flashcards/cues| B[FlashcardController]
+    B -->|Calls generateCues(flashcards)| C[FlashcardService]
+    C -->|Send prompt| D[OpenAI Chat API]
+    D -->|Return generated cues| C
+    C -->|Return JSON Map("cues")| B
+    B -->|HTTP Response| A
+
+    %% Optional persistence
+    C -->|Save flashcards| E[FlashcardRepository]
+    E --> F[(Database)]
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#bfb,stroke:#333,stroke-width:2px
+    style D fill:#fbb,stroke:#333,stroke-width:2px
+    style E fill:#ffb,stroke:#333,stroke-width:2px
+    style F fill:#eee,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+
+StudyController Flow – Layered Breakdown
+1. Client Layer
+
+Origin of request: Angular frontend, Postman, or any HTTP client.
+
+Request example:
+
+POST http://localhost:8080/api/study/generate
+Content-Type: application/json
+
+{
+    "topic": "Spring Boot Services"
+}
+
+
+Authentication: @AuthenticationPrincipal User user – Spring Security provides currently logged-in user (if enabled).
+
+2. Controller Layer
+
+Class: StudyController
+
+Annotation: @RestController
+
+Mapping: /api/study → @PostMapping("/generate")
+
+Responsibilities:
+
+Accept request with topic
+
+Extract authenticated user
+
+Call StudyService to generate a study session with flashcards
+
+Return a StudySessionDto with session info + flashcards
+
+Code snippet:
+
+@PostMapping("/generate")
+public ResponseEntity<StudySessionDto> generateStudyGuide(
+        @RequestBody Map<String, String> payload,
+        @AuthenticationPrincipal User user) {
+
+    String topic = payload.get("topic");
+    StudySessionDto session = studyService.generateStudyGuide(user, topic);
+    
+    return ResponseEntity.ok(session);
+}
+
+3. Service Layer
+
+Class: StudyService
+
+Annotation: @Service
+
+Responsibilities:
+
+Save session – persist a new StudySession for this user/topic
+
+Build prompt – generate OpenAI prompt using topic
+
+Call OpenAI API – get JSON response with flashcards
+
+Parse JSON → convert into Flashcard entities
+
+Save flashcards to repository
+
+Return DTO → StudySessionDto containing session + flashcards
+
+Important Notes:
+
+Uses FlashcardRepository and StudySessionRepository
+
+Uses OpenAiService to abstract API calls
+
+Returns DTO rather than entities directly
+
+4. Repository Layer
+
+Repositories Used:
+
+FlashcardRepository → save generated flashcards
+
+StudySessionRepository → save the session
+
+UserRepository → optional for fetching user details
+
+5. External API
+
+OpenAI Chat API for generating study guide content
+
+Request contains topic, expects JSON with flashcards
+
+6. DTO Layer
+
+Class: StudySessionDto
+
+Contains:
+
+StudySession info (user, topic, timestamp)
+
+List<Flashcard> → flashcards with memory cues
+
+This is the object returned to the client
+
+7. Response
+
+Controller returns JSON DTO
+
+Angular frontend can render study session and flashcards
+
+Mermaid Diagram – StudyController Flow
+
+flowchart TD
+    A[Client Angular / Postman] -->|POST /api/study/generate| B[StudyController]
+    B -->|Call generateStudyGuide user, topic| C[StudyService]
+    C -->|Save new StudySession| D[StudySessionRepository]
+    C -->|Build prompt & call OpenAI API| E[OpenAI Chat API]
+    E -->|Return flashcards JSON| C
+    C -->|Parse JSON → Flashcards| F[FlashcardRepository]
+    F -->|Persist Flashcards| G[(Database)]
+    D -->|Persist Session| G
+    C -->|Return StudySessionDto| B
+    B -->|HTTP Response| A
+
+    style A fill:#8809ab,stroke:#333,stroke-width:2px
+    style B fill:#7171bf,stroke:#333,stroke-width:2px
+    style C fill:#64a364,stroke:#333,stroke-width:2px
+    style D fill:#ffb,stroke:#333,stroke-width:2px
+    style E fill:#b36b6b,stroke:#333,stroke-width:2px
+    style F fill:#eee,stroke:#333,stroke-width:2px
+    style G fill:#eee,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5
+
+    
+
+TextToSpeechController Flow – Layered Breakdown
+1. Client Layer
+Origin of request: Angular frontend, Postman, or any HTTP client
+Request example:
+  POST http://localhost:8080/api/tts/OpenAI
+  Content-Type: text/plain
+  Hello world, this is a test.
+
+Path variable: provider = OpenAI
+Request body: text to synthesize
+
+2. Controller Layer
+Class: TextToSpeechController
+Annotation: @RestController
+Mapping: /api/tts → @PostMapping("/{provider}")
+Responsibilities:
+	Determine subscription tier of user (mocked here as attribute)
+	Validate provider availability for tier
+	Map provider name → Spring Bean for service implementation
+	Call TTS service to generate audio bytes
+	Return audio bytes with headers (Content-Type: audio/mpeg)
+
+
+3. Service Layer
+Interface: TtsService
+	
+	public interface TtsService {
+	    byte[] synthesize(String text);
+	}
+
+
+Implementations:
+	OpenAiTtsService → uses OpenAI TTS API
+	GoogleTtsService → uses Google Cloud TTS
+	AwsPollyTtsService → uses AWS Polly
+
+Responsibilities:
+	
+	Generate audio bytes from text
+	Abstract provider-specific API details
+
+4. DTO Layer
+ProviderInfo DTO – used to store provider metadata
+Used for availability checks and frontend info
+
+5. ApplicationContext Layer
+ApplicationContext is used to dynamically load the correct TTS service bean based on provider name
+Maps provider → Spring Bean:
+	OpenAI -> openAiTtsService
+	Google -> googleTtsService
+	AWS Polly -> awsPollyTtsService
+
+6. External API Layer
+
+Each provider sends text → their TTS API → returns audio bytes
+OpenAI: gpt-4o-mini-tts
+Google: en-US-Wavenet-D
+AWS Polly: Joanna
+
+7. Response
+
+Returns byte array of audio file
+HTTP headers:
+	Content-Disposition: inline; filename=output.mp3
+	Content-Type: audio/mpeg
+Angular frontend can stream or play audio directly
+
+flowchart TD
+    A[Client Angular / Postman] -->|POST /api/tts/provider| B[TextToSpeechController]
+    B -->|Check subscription tier & rules| C[ProviderInfo DTO]
+    B -->|Map provider → Spring Bean| D[ApplicationContext]
+    D -->|Get TtsService Bean| E[TtsService Implementation]
+    E -->|Call provider API| F[External TTS API OpenAI / Google / AWS]
+    F -->|Return audio bytes| E
+    E -->|Return audio bytes| B
+    B -->|Set HTTP headers + response| A
+
+   style A fill:#8809ab,stroke:#333,stroke-width:2px
+    style B fill:#7171bf,stroke:#333,stroke-width:2px
+    style C fill:#64a364,stroke:#333,stroke-width:2px
+    style D fill:#ffb,stroke:#333,stroke-width:2px
+    style E fill:#b36b6b,stroke:#333,stroke-width:2px
+    style F fill:#eee,stroke:#333,stroke-width:2px,stroke-dasharray: 5 5

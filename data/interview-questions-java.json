@@ -1,0 +1,214 @@
+[
+  {
+    "topic": "Java",
+    "question": "What is garbage collection in Java?",
+    "answer": "An <strong>automatic process</strong> that <u>frees</u> memory by <u>removing</u> <strong>objects</strong> that are no longer <u>reachable</u>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the difference between JDK, JRE, and JVM?",
+    "answer": "<code>JVM</code> <u>runs</u> <strong>Java bytecode</strong>, <code>JRE</code> includes <code>JVM</code> and <strong>libraries</strong>, <code>JDK</code> includes <code>JRE</code> and <strong>development tools</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java",
+    "question": "What are Java Collections?",
+    "answer": "<strong>Frameworks</strong> like <code>List</code>, <code>Set</code>, and <code>Map</code> that <u>store</u> and <u>manipulate</u> groups of <strong>objects</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java",
+    "question": "Explain the difference between ArrayList and LinkedList.",
+    "answer": "<code>ArrayList</code> <u>uses</u> a <strong>dynamic array</strong>, while <code>LinkedList</code> <u>uses</u> <strong>nodes</strong> <u>connected</u> by <strong>pointers</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is multithreading in Java?",
+    "answer": "<strong>Multithreading</strong> is <u>executing</u> multiple <strong>threads</strong> <u>concurrently</u> to <u>improve</u> performance.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is synchronization?",
+    "answer": "A <strong>technique</strong> to <u>control</u> access to <strong>shared resources</strong> among multiple <strong>threads</strong>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What are checked and unchecked exceptions?",
+    "answer": "<strong>Checked exceptions</strong> must be <u>declared</u> or <u>handled</u>; <strong>unchecked exceptions</strong> do not <u>require</u> declaration.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "Explain Java 8 Streams.",
+    "answer": "A <strong>fluent API</strong> to <u>process</u> sequences of <strong>elements</strong> with <strong>functional-style operations</strong> like <code>map</code>, <code>filter</code>, and <code>reduce</code>.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the Java Memory Model?",
+    "answer": "Defines how <strong>threads</strong> <u>interact</u> through <strong>memory</strong> and how changes are <u>propagated</u> across them.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the difference between `final`, `finally`, and `finalize`?",
+    "answer": "<code>final</code> <u>declares</u> constants or prevents overriding, <code>finally</code> <u>executes</u> after try-catch, <code>finalize()</code> is <u>called</u> by <strong>GC</strong> before object destruction.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the purpose of `volatile` keyword?",
+    "answer": "<code>volatile</code> <u>ensures</u> visibility of <strong>variable changes</strong> across <strong>threads</strong>, avoiding caching issues.",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java",
+    "question": "What is a Java interface?",
+    "answer": "An <strong>abstract type</strong> that <u>specifies</u> methods a class must <u>implement</u>. Supports <strong>polymorphism</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java",
+    "question": "Explain the difference between abstract class and interface.",
+    "answer": "<strong>Abstract classes</strong> can <u>have</u> method bodies, while <strong>interfaces</strong> (before Java 8) <u>define</u> methods without <u>implementation</u>.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is autoboxing and unboxing?",
+    "answer": "<strong>Autoboxing</strong> <u>converts</u> primitives to wrapper objects automatically; <strong>unboxing</strong> <u>converts</u> wrappers back to primitives.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java",
+    "question": "What is the difference between `==` and `.equals()`?",
+    "answer": "<code>==</code> <u>compares</u> <strong>object references</strong>; <code>.equals()</code> <u>compares</u> <strong>object content</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "What is the difference between final variable, object, and method?",
+    "answer": "<strong>final variable</strong> is immutable; <strong>final object</strong> reference is immutable but object can change; <strong>final method</strong> cannot be overridden.",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "What is an interface?",
+    "answer": "<strong>Interface</strong> <u>defines methods without implementation</u>; classes <u>implement</u> interfaces to provide behavior; example: <code>interface MyInterface { void doSomething(); }</code>",
+    "difficulty": "medium",
+    "color": "info"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "Does an interface have only one method?",
+    "answer": "No, an interface can have multiple abstract methods. A <strong>functional interface</strong> has exactly one abstract method and can be used in lambda expressions.",
+    "difficulty": "medium",
+    "color": "primary"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "What is an enum?",
+    "answer": "<strong>Enum</strong> <u>represents a fixed set of constants</u>; example: <code>enum Day { MONDAY, TUESDAY }</code>",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Collections",
+    "question": "What is a List?",
+    "answer": "<strong>List</strong> <u>ordered collection</u> allowing duplicates; example: <code>List<String> list = new ArrayList<>();</code>",
+    "difficulty": "easy",
+    "color": "primary"
+  },
+  {
+    "topic": "Java Collections",
+    "question": "What is a Set?",
+    "answer": "<strong>Set</strong> <u>unordered collection</u> that <strong>does not allow duplicates</strong>; example: <code>Set<String> set = new HashSet<>();</code>",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Collections",
+    "question": "What is a Map?",
+    "answer": "<strong>Map</strong> <u>stores key-value pairs</u> with unique keys; example: <code>Map<String,Integer> map = new HashMap<>();</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "Traditional For Loop",
+    "answer": "<strong>for</strong> loop <u>indexed iteration</u> over arrays or lists; example: <code>for(int i=0; i<n; i++)</code>",
+    "difficulty": "easy",
+    "color": "primary"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "While Loop",
+    "answer": "<strong>while</strong> loop <u>executes while condition is true</u>; used when the number of iterations is unknown",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "Do-While Loop",
+    "answer": "<strong>do-while</strong> loop <u>executes at least once</u>, then checks the condition; example: <code>do {...} while(condition);</code>",
+    "difficulty": "medium",
+    "color": "warning"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "Enhanced For Loop (For-Each)",
+    "answer": "<u>Iterates over collections or arrays without index</u>; example: <code>for(String s: list)</code>",
+    "difficulty": "easy",
+    "color": "info"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "forEach Lambda",
+    "answer": "<u>One-line iteration using lambda expressions</u>; example: <code>list.forEach(System.out::println)</code>",
+    "difficulty": "medium",
+    "color": "success"
+  },
+  {
+    "topic": "Java Loops",
+    "question": "Streams API",
+    "answer": "<u>Functional style iteration</u> with optional transformations; example: <code>list.stream().forEach(System.out::println)</code>",
+    "difficulty": "hard",
+    "color": "danger"
+  },
+  {
+    "topic": "Java Basics",
+    "question": "What is the difference between `==` and `.equals()`?",
+    "answer": "<code>==</code> <u>compares</u> <strong>object references</strong>; <code>.equals()</code> <u>compares</u> <strong>object content</strong>.",
+    "difficulty": "easy",
+    "color": "success"
+  },
+  {
+    "topic": "Spring Boot",
+    "question": "What is the advantage of Spring Boot vs Spring Framework?",
+    "answer": "<strong>Spring Boot</strong> comes with <u>preconfigured defaults</u>, embedded servers, and opinionated setup to quickly create production-ready apps; Spring Framework requires more manual configuration.",
+    "difficulty": "medium",
+    "color": "info"
+  }
+
+
+]

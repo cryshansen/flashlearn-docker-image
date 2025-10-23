@@ -1,0 +1,309 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.3
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Oct 21, 2025 at 06:47 PM
+-- Server version: 5.7.26
+-- PHP Version: 7.4.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `flashlearn`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flashcard`
+--
+
+CREATE TABLE `flashcard` (
+  `id` bigint(20) NOT NULL,
+  `answer` varchar(2000) DEFAULT NULL,
+  `color` varchar(255) DEFAULT NULL,
+  `difficulty` varchar(255) DEFAULT NULL,
+  `question` varchar(255) DEFAULT NULL,
+  `topic` varchar(255) DEFAULT NULL,
+  `session_id` bigint(20) DEFAULT NULL,
+  `answer_audio_path` varchar(255) DEFAULT NULL,
+  `question_audio_path` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `flashcard`
+--
+
+INSERT INTO `flashcard` (`id`, `answer`, `color`, `difficulty`, `question`, `topic`, `session_id`, `answer_audio_path`, `question_audio_path`) VALUES
+(1, 'The primary pigment is <strong>chlorophyll</strong>, which <u>absorbs</u> light energy.', 'success', 'easy', 'What is the primary pigment involved in <strong>photosynthesis</strong>?', 'Photosynthesis', 3, 'audio/1/1_answer.mp3', 'audio/1/1_question.mp3'),
+(2, '<strong>Photosynthesis</strong> mainly occurs in the <strong>chloroplast</strong> of plant cells.', 'success', 'easy', 'In which organelle does <strong>photosynthesis</strong> mainly occur?', 'Photosynthesis', 3, 'audio/1/2_answer.mp3', 'audio/1/2_question.mp3'),
+(3, 'The two main stages are the <strong>light-dependent reactions</strong> and <strong>Calvin cycle</strong>.', 'warning', 'medium', 'What are the two main stages of <strong>photosynthesis</strong>?', 'Photosynthesis', 3, 'audio/1/3_answer.mp3', 'audio/1/3_question.mp3'),
+(4, 'The <strong>light-dependent reactions</strong> <u>convert</u> light energy into <strong>ATP</strong> and <strong>NADPH</strong>.', 'warning', 'medium', 'What does the <strong>light-dependent reactions</strong> convert light energy into?', 'Photosynthesis', 3, 'audio/1/4_answer.mp3', 'audio/1/4_question.mp3'),
+(5, 'The gas <strong>carbon dioxide (CO2)</strong> is <u>used</u> in the <strong>Calvin cycle</strong>.', 'success', 'easy', 'What gas is <u>used</u> in the <strong>Calvin cycle</strong>?', 'Photosynthesis', 3, 'audio/1/5_answer.mp3', 'audio/1/5_question.mp3'),
+(6, '<em>The overall equation is 6CO2 + 6H2O + light energy → C6H12O6 + 6O2.</em>', 'danger', 'hard', 'What is the overall equation for <strong>photosynthesis</strong>?', 'Photosynthesis', 3, 'audio/1/6_answer.mp3', 'audio/1/6_question.mp3'),
+(7, 'Red and blue wavelengths are most effective for <strong>photosynthesis</strong>.', 'warning', 'medium', 'Which wavelengths of light are most effective for <strong>photosynthesis</strong>?', 'Photosynthesis', 3, 'audio/1/7_answer.mp3', 'audio/1/7_question.mp3'),
+(8, 'The end products are <strong>glucose</strong>, different types of sugars, and other carbohydrates.', 'warning', 'medium', 'What are the end products of the <strong>Calvin cycle</strong>?', 'Photosynthesis', 3, 'audio/1/8_answer.mp3', 'audio/1/8_question.mp3'),
+(9, '<strong>Water</strong> is split to <u>provide</u> electrons and protons in the <strong>light reactions</strong>.', 'danger', 'hard', 'What role does <strong>water</strong> play in <strong>photosynthesis</strong>?', 'Photosynthesis', 3, 'audio/1/9_answer.mp3', 'audio/1/9_question.mp3'),
+(10, '<strong>Photosynthesis</strong> <u>produces</u> oxygen and <u>stores</u> energy in glucose for other organisms.', 'warning', 'medium', 'How does <strong>photosynthesis</strong> benefit the ecosystem?', 'Photosynthesis', 3, 'audio/1/10_answer.mp3', 'audio/1/10_question.mp3'),
+(11, 'It <u>automates</u> the <u>deployment</u>, <u>scaling</u>, and <u>management</u> of containerized applications.', 'success', 'easy', 'What is the primary purpose of <strong>Kubernetes</strong>?', 'Kubernetes', 4, 'audio/1/11_answer.mp3', 'audio/1/11_question.mp3'),
+(12, 'A <strong>Pod</strong> is the smallest deployable unit that can <u>host</u> one or more containers.', 'success', 'easy', 'What does <strong>Pod</strong> represent in Kubernetes?', 'Kubernetes', 4, 'audio/1/12_answer.mp3', 'audio/1/12_question.mp3'),
+(13, 'It <u>manages</u> containerized applications across a cluster to provide <em>high availability</em> and <em>scalability</em>.', 'warning', 'medium', 'What <strong>container orchestration</strong> capabilities does Kubernetes provide?', 'Kubernetes', 4, 'audio/1/13_answer.mp3', 'audio/1/13_question.mp3'),
+(14, 'A <strong>Service</strong> is an abstraction that <u>defines</u> a logical set of Pods and a policy for <u>accessing</u> them.', 'warning', 'medium', 'What is a <strong>Service</strong> in Kubernetes?', 'Kubernetes', 4, 'audio/1/14_answer.mp3', 'audio/1/14_question.mp3'),
+(15, 'A <strong>Node</strong> is a worker machine that <u>executes</u> Pods and is managed by the <strong>Master node</strong>.', 'success', 'easy', 'What role does a <strong>Node</strong> play in a Kubernetes cluster?', 'Kubernetes', 4, 'audio/1/15_answer.mp3', 'audio/1/15_question.mp3'),
+(16, 'A <strong>Deployment</strong> provides declarative updates for Pods and <u>ensures</u> the desired number of replicas are <u>running</u>.', 'warning', 'medium', 'What is a <strong>Deployment</strong> in Kubernetes?', 'Kubernetes', 4, 'audio/1/16_answer.mp3', 'audio/1/16_question.mp3'),
+(17, 'The <strong>Kubelet</strong> is an agent that <u>runs</u> on each Node and <u>ensures</u> the defined containers are <u>running</u>.', 'warning', 'medium', 'What does the term <strong>Kubelet</strong> refer to?', 'Kubernetes', 4, 'audio/1/17_answer.mp3', 'audio/1/17_question.mp3'),
+(18, 'A <strong>ConfigMap</strong> is used to <u>store</u> non-sensitive configuration data in key-value pairs to <u>inject</u> into Pods.', 'warning', 'medium', 'What is the purpose of a <strong>ConfigMap</strong>?', 'Kubernetes', 4, 'audio/1/18_answer.mp3', 'audio/1/18_question.mp3'),
+(19, 'The <strong>Kubernetes Scheduler</strong> <u>assigns</u> Pods to Nodes based on resource availability and other constraints.', 'danger', 'hard', 'What feature does the <strong>Kubernetes Scheduler</strong> provide?', 'Kubernetes', 4, 'audio/1/19_answer.mp3', 'audio/1/19_question.mp3'),
+(20, '<strong>Horizontal Pod Autoscaler</strong> automatically <u>scales</u> the number of Pods based on observed CPU utilization or other select metrics.', 'warning', 'medium', 'What does <strong>Horizontal Pod Autoscaler</strong> do?', 'Kubernetes', 4, 'audio/1/20_answer.mp3', 'audio/1/20_question.mp3'),
+(21, 'A <strong>Namespace</strong> provides a mechanism to <u>divide</u> cluster resources between multiple users or applications.', 'warning', 'medium', 'What is a <strong>Namespace</strong> in Kubernetes?', 'Kubernetes', 4, 'audio/1/21_answer.mp3', 'audio/1/21_question.mp3'),
+(22, 'The <strong>Master Node</strong> is responsible for <u>managing</u> the Kubernetes cluster and coordinating the activities of Workers.', 'danger', 'hard', 'What is the role of the <strong>Master Node</strong>?', 'Kubernetes', 4, 'audio/1/22_answer.mp3', 'audio/1/22_question.mp3'),
+(23, '<strong>etcd</strong> is a distributed key-value store that <u>stores</u> all cluster data, including configurations and states.', 'danger', 'hard', 'What does <strong>etcd</strong> do in Kubernetes?', 'Kubernetes', 4, 'audio/1/23_answer.mp3', 'audio/1/23_question.mp3'),
+(24, 'A <strong>Volume</strong> is a piece of storage in the Kubernetes cluster that <u>exists</u> beyond the lifespan of a Pod.', 'warning', 'medium', 'What is a <strong>Volume</strong> in Kubernetes?', 'Kubernetes', 4, 'audio/1/24_answer.mp3', 'audio/1/24_question.mp3'),
+(25, '<strong>ClusterIP</strong> makes a service accessible only within the cluster, while <strong>NodePort</strong> exposes it on a port on each Node.', 'danger', 'hard', 'What is the difference between a <strong>ClusterIP</strong> and a <strong>NodePort</strong> Service?', 'Kubernetes', 4, 'audio/1/25_answer.mp3', 'audio/1/25_question.mp3'),
+(26, '<strong>CRDs</strong> allow users to <u>extend</u> Kubernetes capabilities by defining their own resource types.', 'danger', 'hard', 'What is the purpose of <strong>Custom Resource Definitions (CRDs)</strong>?', 'Kubernetes', 4, 'audio/1/26_answer.mp3', 'audio/1/26_question.mp3'),
+(27, '<strong>kubectl</strong> is used to <u>interact</u> with the Kubernetes API and manage cluster resources.', 'success', 'easy', 'What is the <strong>kubectl</strong> command line tool used for?', 'Kubernetes', 4, 'audio/1/27_answer.mp3', 'audio/1/27_question.mp3'),
+(117, '<strong>HashMap</strong> <u>uses</u> <strong>hashing</strong> and <u>provides</u> <strong>O(1) lookup</strong>, whereas <strong>TreeMap</strong> is a <strong>Red-Black tree</strong> <u>providing</u> <strong>O(log n)</strong> <strong>operations</strong> with <strong>sorted keys</strong>.', 'success', 'easy', 'What is the difference between HashMap and TreeMap?', 'Core Java', 11, 'audio/1/117_answer.mp3', 'audio/1/117_question.mp3'),
+(118, '<ul><li><strong>final variable:</strong> Once assigned, its value cannot be reassigned.</li>  <li><strong>final object reference:</strong> The ref cannot refer to another object, but internal state object values change.</li><li><strong>final method:</strong> Cannot be overridden by subclasses.</li><li><strong>final class:</strong> Cannot be extended (no inheritance).</li></ul>', 'success', 'easy', 'What is the difference between final on variables, objects, methods, and classes?', 'Core Java', 11, 'audio/1/118_answer.mp3', 'audio/1/118_question.mp3'),
+(119, 'It <u>allows</u> <u>inspection</u> and <u>modification</u> of <strong>classes</strong>, <strong>methods</strong>, and <strong>fields</strong> at runtime — <u>used</u> in <strong>frameworks</strong> like <strong>Spring</strong> for <strong>dependency injection</strong> and <strong>annotation scanning</strong>.', 'warning', 'medium', 'What is the Reflections API used for?', 'Core Java', 11, 'audio/1/119_answer.mp3', 'audio/1/119_question.mp3'),
+(120, 'The <strong>Java Memory Model</strong> <u>defines</u> how <strong>threads</strong> <u>interact</u> with <strong>memory</strong>. The <strong>JVM</strong> <u>manages</u> <strong>memory</strong> with the <strong>heap</strong> and <strong>stack</strong>, and <strong>garbage collection</strong> <u>reclaims</u> <strong>memory</strong> from <u>unreachable</u> <strong>objects</strong> using <strong>algorithms</strong> like <strong>G1</strong>, <strong>CMS</strong>, or <strong>Serial GC</strong>.', 'danger', 'hard', 'What is the Java Memory Model and how does garbage collection work?', 'Core Java', 11, 'audio/1/120_answer.mp3', 'audio/1/120_question.mp3'),
+(121, 'They <u>allow</u> <strong>functional-style operations</strong> on <strong>collections</strong>, <u>enabling</u> concise, readable, and parallelizable <strong>code</strong> using <strong>methods</strong> like <code>map</code>, <code>filter</code>, <code>reduce</code>.', 'success', 'easy', 'How do Java 8 Streams improve code?', 'Core Java', 11, 'audio/1/121_answer.mp3', 'audio/1/121_question.mp3'),
+(122, 'It <u>emphasizes</u> <strong>immutability</strong>, <strong>pure functions</strong>, and <strong>stateless behavior</strong>. Java 8 <u>introduced</u> <strong>lambdas</strong> and <strong>functional interfaces</strong> (e.g., <code>Function</code>, <code>Predicate</code>) to <u>support</u> this style.', 'warning', 'medium', 'What is functional programming in Java?', 'Core Java', 11, 'audio/1/122_answer.mp3', 'audio/1/122_question.mp3'),
+(123, '<strong>Model</strong> <u>handles</u> <strong>data</strong> and <strong>logic</strong>, <strong>View</strong> <u>renders</u> <strong>UI</strong>, <strong>Controller</strong> <u>handles</u> <strong>input</strong> and <u>orchestrates</u> between <strong>model</strong> and <strong>view</strong>.', 'success', 'easy', 'What are the responsibilities of each layer in MVC?', 'Design Principles', 11, 'audio/1/123_answer.mp3', 'audio/1/123_question.mp3'),
+(124, '<strong>Eviction</strong> <u>removes</u> old <strong>entries</strong> when <strong>cache</strong> is full. Common <strong>strategies</strong>: <strong>LRU</strong> (Least Recently Used), <strong>FIFO</strong>, <strong>LFU</strong> (Least Frequently Used).', 'warning', 'medium', 'What is cache eviction and name common strategies?', 'Caching', 11, 'audio/1/124_answer.mp3', 'audio/1/124_question.mp3'),
+(125, '<strong>Write-through</strong> <u>writes</u> <strong>data</strong> to both <strong>cache</strong> and <strong>DB</strong> instantly; <strong>write-back</strong> <u>delays</u> <strong>DB write</strong> until <strong>eviction</strong> for performance.', 'danger', 'hard', 'What is the difference between write-through and write-back caching?', 'Caching', 11, 'audio/1/125_answer.mp3', 'audio/1/125_question.mp3'),
+(126, 'Both <u>prevent</u> <strong>concurrent access</strong>, but <strong>synchronized block</strong> can <u>limit</u> <strong>locking scope</strong> for better <strong>performance</strong>.', 'warning', 'medium', 'What is the difference between synchronized block and synchronized method in Java?', 'Multithreading', 11, 'audio/1/126_answer.mp3', 'audio/1/126_question.mp3'),
+(127, 'A <strong>deadlock</strong> is a situation where two or more <strong>threads</strong> are <u>blocked</u> forever, each <u>waiting</u> on a <strong>resource</strong> held by the other.', 'warning', 'medium', 'What is a deadlock?', 'Multithreading', 11, 'audio/1/127_answer.mp3', 'audio/1/127_question.mp3'),
+(128, 'A <strong>recursion</strong> where the <strong>recursive call</strong> is the last <strong>statement</strong>. It can be <u>optimized</u> by the <strong>compiler</strong> to <u>reuse</u> the current <strong>stack frame</strong>.', 'warning', 'medium', 'What is tail recursion?', 'Recursion', 11, 'audio/1/128_answer.mp3', 'audio/1/128_question.mp3'),
+(129, '<u>Use</u> <strong>tail recursion</strong> if supported, <u>limit</u> <strong>depth</strong>, or <u>convert</u> to <strong>iteration</strong> (loop-based solution).', 'danger', 'hard', 'How do you prevent stack overflow in recursive functions?', 'Recursion', 11, 'audio/1/129_answer.mp3', 'audio/1/129_question.mp3'),
+(130, '<strong>Memory leaks</strong> in long-lived <strong>apps</strong>: <u>referencing</u> <strong>objects</strong> no longer needed (e.g., <u>adding</u> to a static list and never <u>removing</u>) means GC won’t <u>collect</u> them. Use case: <strong>servers</strong> or <strong>desktop apps</strong> where <strong>memory</strong> slowly <u>builds up</u>. And for <strong>performance tuning</strong>: <u>tune</u> GC for large apps (e.g., <strong>high-frequency trading</strong> apps).', 'danger', 'hard', 'When Do You Use or Think About Garbage Collection?', 'Core Java', 11, 'audio/1/130_answer.mp3', 'audio/1/130_question.mp3'),
+(131, '<blockquote><strong>A component</strong></blockquote> <strong>controls</strong> a section of the UI using an <code>HTML template</code>, <code>CSS</code>, and <code>TypeScript</code> logic. It is <u>defined</u> using the <code>@Component</code> decorator.', 'success', 'easy', 'What is an Angular component?', 'Components', 12, 'audio/1/131_answer.mp3', 'audio/1/131_question.mp3'),
+(132, '<u>Define</u> it using the <code>@Component</code> decorator with <strong>selector</strong>, <code>templateUrl</code> or <code>template</code>, and <code>styleUrls</code>.', 'success', 'easy', 'How do you define a component in Angular?', 'Components', 12, 'audio/1/132_answer.mp3', 'audio/1/132_question.mp3'),
+(133, '<blockquote><strong>NgModule</strong></blockquote> is a <strong>decorator</strong> that <u>defines</u> a module which <u>groups</u> components, services, and other modules together.', 'warning', 'medium', 'What is the role of NgModule?', 'Modules', 12, 'audio/1/133_answer.mp3', 'audio/1/133_question.mp3'),
+(134, '<strong><code>AppModule</code></strong> is the <strong>root module</strong> and is <u>bootstrapped</u> to <u>launch</u> the app.', 'success', 'easy', 'What is the root module in every Angular app?', 'Modules', 12, 'audio/1/134_answer.mp3', 'audio/1/134_question.mp3'),
+(135, '<blockquote><strong>Dependency Injection (DI)</strong></blockquote> is a <strong>design pattern</strong> where services or dependencies are <u>provided</u> to components rather than <u>created</u> inside them.', 'warning', 'medium', 'What is Dependency Injection in Angular?', 'Services & DI', 12, 'audio/1/135_answer.mp3', 'audio/1/135_question.mp3'),
+(136, '<u>Create</u> with <code>ng generate service myService</code>, and <u>inject</u> using the constructor: <code>constructor(private myService: MyService) {}</code>', 'warning', 'medium', 'How do you create and inject a service in Angular?', 'Services & DI', 12, 'audio/1/136_answer.mp3', 'audio/1/136_question.mp3'),
+(137, '<u>Configure</u> routing using the <code>RouterModule.forRoot(routes)</code> in <code>AppModule</code> and <u>define</u> routes as an array of <em>path-component</em> pairs.', 'warning', 'medium', 'How do you configure routing in Angular?', 'Routing', 12, 'audio/1/137_answer.mp3', 'audio/1/137_question.mp3'),
+(138, '<u>Use</u> the <strong>Router</strong> service: <code>this.router.navigate([\'/path\']);</code>', 'warning', 'medium', 'How do you navigate programmatically in Angular?', 'Routing', 12, 'audio/1/138_answer.mp3', 'audio/1/138_question.mp3'),
+(139, '<blockquote><strong>A structural directive</strong></blockquote> <u>changes</u> the DOM layout by <u>adding/removing</u> elements (e.g., <code>*ngIf</code>, <code>*ngFor</code>).', 'success', 'easy', 'What is a structural directive in Angular?', 'Directives', 12, 'audio/1/139_answer.mp3', 'audio/1/139_question.mp3'),
+(140, 'It <u>conditionally includes</u> or <u>removes</u> elements in the DOM based on a <strong>Boolean expression</strong>.', 'success', 'easy', 'What is the purpose of `*ngIf`?', 'Directives', 12, 'audio/1/140_answer.mp3', 'audio/1/140_question.mp3'),
+(141, '<code>ngOnInit()</code> is a <strong>lifecycle hook</strong> <u>called</u> after the component\'s constructor and after the first <code>ngOnChanges()</code>.', 'warning', 'medium', 'What is ngOnInit?', 'Lifecycle', 12, 'audio/1/141_answer.mp3', 'audio/1/141_question.mp3'),
+(142, '<code>ngOnDestroy()</code> is <u>called</u> just before the component is <u>removed</u> from the DOM. <strong>Useful</strong> for <u>cleanup</u>.', 'warning', 'medium', 'When is ngOnDestroy called?', 'Lifecycle', 12, 'audio/1/142_answer.mp3', 'audio/1/142_question.mp3'),
+(143, '<blockquote><strong>Template-driven forms</strong></blockquote> are <u>defined</u> in HTML using directives, while <strong>reactive forms</strong> are <u>defined</u> in TypeScript using <code>FormControl</code> and <code>FormGroup</code>.', 'danger', 'hard', 'What is the difference between template-driven and reactive forms?', 'Forms', 12, 'audio/1/143_answer.mp3', 'audio/1/143_question.mp3'),
+(144, '<u>Use</u> <code>[(ngModel)]</code> two-way data binding.', 'success', 'easy', 'How do you bind an input field to a variable in template-driven forms?', 'Forms', 12, 'audio/1/144_answer.mp3', 'audio/1/144_question.mp3'),
+(145, '<blockquote><strong>An Observable</strong></blockquote> represents a <strong>stream</strong> of asynchronous data that can be <u>subscribed</u> to.', 'warning', 'medium', 'What is an Observable in Angular?', 'RxJS', 12, 'audio/1/145_answer.mp3', 'audio/1/145_question.mp3'),
+(146, 'It <u>allows</u> you to <u>listen</u> to values <u>emitted</u> by an <strong>Observable</strong> and <u>take action</u> when values are received.', 'success', 'easy', 'What does the `subscribe()` method do?', 'RxJS', 12, 'audio/1/146_answer.mp3', 'audio/1/146_question.mp3'),
+(147, 'It <u>chains</u> RxJS operators to <u>transform</u> the stream (e.g., <code>map</code>, <code>filter</code>, <code>switchMap</code>).', 'warning', 'medium', 'What is the `pipe()` method used for?', 'RxJS', 12, 'audio/1/147_answer.mp3', 'audio/1/147_question.mp3'),
+(148, '<code>switchMap</code> <u>cancels</u> the previous inner <strong>Observable</strong> and <u>subscribes</u> to the new one. <strong>Useful</strong> for <em>search/autocomplete</em>.', 'danger', 'hard', 'What does `switchMap` do?', 'RxJS', 12, 'audio/1/148_answer.mp3', 'audio/1/148_question.mp3'),
+(149, '<u>Run</u> <code>ng generate component component-name</code> or shorthand <code>ng g c component-name</code>', 'success', 'easy', 'How do you generate a component using Angular CLI?', 'CLI', 12, 'audio/1/149_answer.mp3', 'audio/1/149_question.mp3'),
+(150, '<u>Use</u> <code>ng new project-name</code>', 'success', 'easy', 'How do you create a new Angular project?', 'CLI', 12, 'audio/1/150_answer.mp3', 'audio/1/150_question.mp3'),
+(151, '<strong>JUnit</strong> is a <strong>unit testing framework</strong> for Java that <u>allows</u> developers to <u>write</u> and <u>run</u> repeatable tests, <u>using</u> annotations like <strong>@Test</strong> to <u>mark</u> test methods.', 'success', 'easy', 'What is JUnit used for in Java?', 'Java Testing', 13, 'audio/1/151_answer.mp3', 'audio/1/151_question.mp3'),
+(152, '<strong>Assertions</strong> are methods like <strong>assertEquals()</strong> and <strong>assertTrue()</strong> that <u>verify</u> expected outcomes, <u>throwing</u> an <strong>AssertionError</strong> if the condition <u>fails</u>.', 'success', 'easy', 'What is the role of assertions in JUnit?', 'Java Testing', 13, 'audio/1/152_answer.mp3', 'audio/1/152_question.mp3'),
+(153, '<strong>JUnit 5</strong> <u>supports</u> <strong>modular architecture</strong> with <strong>JUnit Platform</strong>, <strong>Jupiter API</strong>, and <strong>Vintage Engine</strong>. It <u>replaces</u> JUnit 4 annotations like <strong>@Before</strong> with <strong>@BeforeEach</strong> and <strong>@After</strong> with <strong>@AfterEach</strong>.', 'warning', 'medium', 'How does JUnit 5 differ from JUnit 4?', 'Java Testing', 13, 'audio/1/153_answer.mp3', 'audio/1/153_question.mp3'),
+(154, '<strong>Mockito</strong> is a <strong>mocking framework</strong> that <u>creates</u> mock objects to <u>simulate</u> dependencies, <u>allowing</u> isolation of the class under test.', 'warning', 'medium', 'What is Mockito used for?', 'Java Testing', 13, 'audio/1/154_answer.mp3', 'audio/1/154_question.mp3'),
+(155, 'You <u>use</u> <strong>Mockito.mock(ClassName.class)</strong> or <strong>@Mock</strong> annotation, then <u>define</u> behavior with <strong>when(...).thenReturn(...)</strong>.', 'warning', 'medium', 'How do you create a mock with Mockito?', 'Java Testing', 13, 'audio/1/155_answer.mp3', 'audio/1/155_question.mp3'),
+(156, '<strong>Stub</strong> <u>provides</u> fixed data to <u>support</u> the test, while <strong>mock</strong> <u>tracks</u> interactions and <u>verifies</u> behavior in addition to <u>returning</u> values.', 'warning', 'medium', 'What is the difference between a mock and a stub?', 'Java Testing', 13, 'audio/1/156_answer.mp3', 'audio/1/156_question.mp3'),
+(157, '<strong>TestNG</strong> is a <strong>testing framework</strong> that <u>supports</u> <strong>parallel execution</strong>, <strong>data-driven tests</strong>, and <strong>more flexible configuration</strong> compared to JUnit’s simpler structure.', 'warning', 'medium', 'What is TestNG and how does it differ from JUnit?', 'Java Testing', 13, 'audio/1/157_answer.mp3', 'audio/1/157_question.mp3'),
+(158, 'You <u>use</u> <strong>assertThrows(ExpectedException.class, () -> { ... })</strong> in JUnit 5 or <strong>@Test(expected = Exception.class)</strong> in JUnit 4.', 'warning', 'medium', 'How do you test exceptions in JUnit?', 'Java Testing', 13, 'audio/1/158_answer.mp3', 'audio/1/158_question.mp3'),
+(159, '<strong>@BeforeEach</strong> <u>runs</u> before each test method to <u>set up</u> the test environment, and <strong>@AfterEach</strong> <u>runs</u> afterward to <u>clean up</u> resources.', 'success', 'easy', 'What is the purpose of @BeforeEach and @AfterEach in JUnit?', 'Java Testing', 13, 'audio/1/159_answer.mp3', 'audio/1/159_question.mp3'),
+(160, '<strong>Parameterized testing</strong> <u>runs</u> the same test multiple times with different parameters, <u>using</u> <strong>@ParameterizedTest</strong> and <strong>@ValueSource</strong> or other sources.', 'warning', 'medium', 'What is parameterized testing in JUnit?', 'Java Testing', 13, 'audio/1/160_answer.mp3', 'audio/1/160_question.mp3'),
+(161, 'A <strong>function</strong> or <strong>class</strong> that <u>returns</u> <code>JSX</code> to <u>describe</u> what should <u>appear</u> on the <strong>screen</strong>.', 'success', 'easy', 'What is a React component?', 'Components', 14, 'audio/1/161_answer.mp3', 'audio/1/161_question.mp3'),
+(162, '<strong>Functional components</strong> are <strong>stateless</strong> (until <code>Hooks</code>), while <strong>class components</strong> have <strong>lifecycle methods</strong> and <code>this</code> context.', 'warning', 'medium', 'What is the difference between a functional and class component?', 'Components', 14, 'audio/1/162_answer.mp3', 'audio/1/162_question.mp3'),
+(163, '<code>JSX</code> stands for <strong>JavaScript XML</strong>. It <u>allows</u> writing <strong>HTML-like syntax</strong> inside <strong>JavaScript code</strong>.', 'success', 'easy', 'What is JSX?', 'JSX', 14, 'audio/1/163_answer.mp3', 'audio/1/163_question.mp3'),
+(164, '<strong>Props</strong> are <strong>inputs</strong> to <strong>components</strong> that are <u>passed</u> down from <strong>parent</strong> to <strong>child</strong> and are <strong>read-only</strong>.', 'success', 'easy', 'What are props in React?', 'Props', 14, 'audio/1/164_answer.mp3', 'audio/1/164_question.mp3'),
+(165, '<strong>State</strong> is a built-in <strong>object</strong> <u>used</u> to <u>contain</u> <strong>data</strong> about the <strong>component</strong> that can <u>change</u> over time.', 'success', 'easy', 'What is state in React?', 'State', 14, 'audio/1/165_answer.mp3', 'audio/1/165_question.mp3'),
+(166, 'By <u>using</u> <code>this.setState({ key: value })</code>.', 'warning', 'medium', 'How do you update state in a class component?', 'State', 14, 'audio/1/166_answer.mp3', 'audio/1/166_question.mp3'),
+(167, 'It <u>allows</u> you to <u>add</u> <strong>state</strong> to <strong>functional components</strong>. <code>const [count, setCount] = useState(0);</code>', 'success', 'easy', 'What is the useState hook?', 'Hooks', 14, 'audio/1/167_answer.mp3', 'audio/1/167_question.mp3'),
+(168, 'It <u>performs</u> <strong>side effects</strong> in <strong>functional components</strong> (e.g., <u>fetching</u> data, <u>subscribing</u> to events).', 'warning', 'medium', 'What is the useEffect hook?', 'Hooks', 14, 'audio/1/168_answer.mp3', 'audio/1/168_question.mp3'),
+(169, '<u>Pass</u> an <strong>empty dependency array</strong>: <code>useEffect(() => { ... }, [])</code>', 'warning', 'medium', 'How do you run useEffect only once?', 'Hooks', 14, 'audio/1/169_answer.mp3', 'audio/1/169_question.mp3'),
+(170, '<u>Attach</u> an <strong>event handler</strong> like <code>onClick={() => handleClick()}</code> in <code>JSX</code>.', 'success', 'easy', 'How do you handle a click event in React?', 'Events', 14, 'audio/1/170_answer.mp3', 'audio/1/170_question.mp3'),
+(171, '<u>Use</u> <code>useState</code> to <u>track</u> <strong>input value</strong> and <u>update</u> onChange: <code>&lt;input value={value} onChange={e =&gt; setValue(e.target.value)} /&gt;</code>', 'warning', 'medium', 'How do you handle form input in React?', 'Forms', 14, 'audio/1/171_answer.mp3', 'audio/1/171_question.mp3'),
+(172, 'A <strong>lifecycle method</strong> in <strong>class components</strong> that <u>runs</u> after the <strong>component</strong> is <u>mounted</u> to the <strong>DOM</strong>.', 'warning', 'medium', 'What is componentDidMount?', 'Lifecycle', 14, 'audio/1/172_answer.mp3', 'audio/1/172_question.mp3'),
+(173, '<u>Render</u> different <strong>UI</strong> based on <strong>conditions</strong> using a <code>ternary operator</code>, <code>if</code>, or logical <code>&&</code>.', 'success', 'easy', 'What is conditional rendering?', 'Rendering', 14, 'audio/1/173_answer.mp3', 'audio/1/173_question.mp3'),
+(174, '<strong>Keys</strong> <u>help</u> React <u>identify</u> which <strong>items</strong> <u>changed</u>, were <u>added</u>, or <u>removed</u> for efficient <strong>updating</strong>.', 'warning', 'medium', 'Why is `key` important in a list?', 'Lists & Keys', 14, 'audio/1/174_answer.mp3', 'audio/1/174_question.mp3'),
+(175, '<code>React.memo</code> is a <strong>higher-order component</strong> that <u>prevents</u> unnecessary <strong>re-renders</strong> if <strong>props</strong> haven\'t <u>changed</u>.', 'danger', 'hard', 'What is React.memo?', 'Optimization', 14, 'audio/1/175_answer.mp3', 'audio/1/175_question.mp3'),
+(176, 'A <strong>library</strong> <u>used</u> to <u>enable</u> <strong>navigation</strong> and <strong>routing</strong> in React applications.', 'warning', 'medium', 'What is React Router?', 'Routing', 14, 'audio/1/176_answer.mp3', 'audio/1/176_question.mp3'),
+(177, '<u>Use</u> <code>&lt;Link to=\'/about\'&gt;About&lt;/Link&gt;</code> or the <code>useNavigate()</code> hook for <strong>programmatic navigation</strong>.', 'warning', 'medium', 'How do you navigate between pages with React Router?', 'Routing', 14, 'audio/1/177_answer.mp3', 'audio/1/177_question.mp3'),
+(178, 'It <u>provides</u> a way to <u>pass</u> <strong>data</strong> through the <strong>component tree</strong> without <strong>props drilling</strong>.', 'danger', 'hard', 'What is the Context API?', 'Context', 14, 'audio/1/178_answer.mp3', 'audio/1/178_question.mp3'),
+(179, 'By <u>using</u> the <code>useContext(MyContext)</code> <strong>hook</strong>.', 'warning', 'medium', 'How do you consume context in a functional component?', 'Context', 14, 'audio/1/179_answer.mp3', 'audio/1/179_question.mp3'),
+(180, 'A <strong>reusable function</strong> that <u>uses</u> built-in <strong>hooks</strong> and <u>encapsulates</u> shared <strong>logic</strong> across <strong>components</strong>.', 'danger', 'hard', 'What is a custom hook?', 'Advanced', 14, 'audio/1/180_answer.mp3', 'audio/1/180_question.mp3'),
+(181, 'It\'s a <strong>design pattern</strong> where the <strong>Spring container</strong> <u>injects</u> <strong>dependencies</strong> into a <strong>bean</strong> at runtime instead of the bean <u>creating</u> them itself.', 'warning', 'medium', 'What is Dependency Injection in Spring?', 'Spring Core', 15, 'audio/1/181_answer.mp3', 'audio/1/181_question.mp3'),
+(182, 'A <strong>bean</strong> is an <strong>object</strong> that is <u>managed</u> by the <strong>Spring IoC container</strong>.', 'success', 'easy', 'What is a Spring Bean?', 'Spring Core', 15, 'audio/1/182_answer.mp3', 'audio/1/182_question.mp3'),
+(183, 'It is a <strong>convenience annotation</strong> that <u>combines</u> <code>@Configuration</code>, <code>@EnableAutoConfiguration</code>, and <code>@ComponentScan</code>.', 'success', 'easy', 'What does @SpringBootApplication do?', 'Spring Boot', 15, 'audio/1/183_answer.mp3', 'audio/1/183_question.mp3'),
+(184, 'It is <u>used</u> to <u>define</u> <strong>configuration values</strong> such as <strong>port</strong>, <strong>datasource</strong>, <strong>logging levels</strong>, etc.', 'success', 'easy', 'What is application.properties used for?', 'Spring Boot', 15, 'audio/1/184_answer.mp3', 'audio/1/184_question.mp3'),
+(185, '<code>@RestController</code> is a specialized <strong>version</strong> of <code>@Controller</code> that <u>combines</u> <code>@Controller</code> and <code>@ResponseBody</code>.', 'success', 'easy', 'What is @RestController?', 'Spring MVC', 15, 'audio/1/185_answer.mp3', 'audio/1/185_question.mp3'),
+(186, '<strong>Spring MVC</strong> <u>maps</u> <strong>requests</strong> to <strong>controller methods</strong> using <strong>annotations</strong> like <code>@RequestMapping</code>, <code>@GetMapping</code>, etc.', 'warning', 'medium', 'How does Spring handle incoming HTTP requests?', 'Spring MVC', 15, 'audio/1/186_answer.mp3', 'audio/1/186_question.mp3'),
+(187, 'It <u>simplifies</u> <strong>database access</strong> using <strong>repository interfaces</strong> and <u>automatically implements</u> <strong>CRUD operations</strong>.', 'warning', 'medium', 'What is the purpose of Spring Data JPA?', 'Spring Data JPA', 15, 'audio/1/187_answer.mp3', 'audio/1/187_question.mp3'),
+(188, 'It <u>marks</u> a <strong>class</strong> as a <strong>JPA entity</strong>, <u>representing</u> a <strong>table</strong> in the <strong>database</strong>.', 'success', 'easy', 'What does @Entity mean?', 'Spring Data JPA', 15, 'audio/1/188_answer.mp3', 'audio/1/188_question.mp3'),
+(189, 'A <strong>framework</strong> for <u>handling</u> <strong>authentication</strong> and <strong>authorization</strong> in <strong>Spring applications</strong>.', 'warning', 'medium', 'What is Spring Security?', 'Spring Security', 15, 'audio/1/189_answer.mp3', 'audio/1/189_question.mp3'),
+(190, 'By <u>configuring</u> <code>HttpSecurity</code> and <u>using</u> <strong>annotations</strong> like <code>@PreAuthorize</code> or <code>@Secured</code>.', 'warning', 'medium', 'How do you secure endpoints in Spring?', 'Spring Security', 15, 'audio/1/190_answer.mp3', 'audio/1/190_question.mp3'),
+(191, 'The <strong>Spring Container</strong> <u>manages</u> the <strong>lifecycle</strong> and <strong>configuration</strong> of <strong>application objects</strong> (beans) using <strong>dependency injection</strong>.', 'warning', 'medium', 'What is the role of the Spring Container?', 'Spring', 15, 'audio/1/191_answer.mp3', 'audio/1/191_question.mp3'),
+(192, '<strong>DI</strong> is a <strong>design pattern</strong> where <strong>objects</strong> are <u>provided</u> with their <strong>dependencies</strong> by an external <strong>source</strong> rather than <u>creating</u> them internally. Spring <u>supports</u> <strong>constructor</strong> and <strong>setter injection</strong>.', 'warning', 'medium', 'What is Dependency Injection?', 'Spring', 15, 'audio/1/192_answer.mp3', 'audio/1/192_question.mp3'),
+(193, 'They are <strong>specializations</strong> of <code>@Component</code> <u>used</u> to <u>mark</u> <strong>beans</strong> for Spring’s <strong>component scanning</strong> with different <strong>semantics</strong> (e.g., <code>@Repository</code> for <strong>DAOs</strong>).', 'warning', 'medium', 'What are @Component, @Service, and @Repository annotations?', 'Spring', 15, 'audio/1/193_answer.mp3', 'audio/1/193_question.mp3'),
+(194, '<strong>Spring Boot</strong> <u>provides</u> <strong>opinionated defaults</strong>, <strong>auto-configuration</strong>, and <strong>embedded servers</strong>, <u>reducing</u> <strong>boilerplate</strong> and <u>simplifying</u> <strong>application setup</strong>.', 'warning', 'medium', 'What is Spring Boot and how does it simplify Spring development?', 'Spring', 15, 'audio/1/194_answer.mp3', 'audio/1/194_question.mp3'),
+(195, 'Spring <u>uses</u> <code>@Transactional</code> to <u>manage</u> <strong>transactions</strong> declaratively. It <u>integrates</u> with various <strong>transaction managers</strong> (JDBC, JPA, etc.).', 'warning', 'medium', 'How does Spring manage transactions?', 'Spring', 15, 'audio/1/195_answer.mp3', 'audio/1/195_question.mp3'),
+(196, '<strong>Jasmine</strong> is a <strong>behavior-driven development</strong> framework used to <u>write</u> <strong>unit tests</strong> in Angular. It <u>provides</u> <strong>describe()</strong>, <strong>it()</strong>, and <strong>expect()</strong> functions to <u>define</u> and <u>assert</u> test behavior.', 'success', 'easy', 'What is the purpose of Jasmine in Angular testing?', 'Angular Testing', 16, 'audio/1/196_answer.mp3', 'audio/1/196_question.mp3'),
+(197, '<strong>TestBed</strong> is Angular’s primary <strong>testing utility</strong> that <u>creates</u> a <strong>testing module</strong> to <u>configure</u> and <u>instantiate</u> components, directives, and services in isolation.', 'success', 'easy', 'What is the purpose of TestBed in Angular?', 'Angular Testing', 16, 'audio/1/197_answer.mp3', 'audio/1/197_question.mp3'),
+(198, 'You <u>use</u> <strong>TestBed.configureTestingModule()</strong> to <u>provide</u> the service, then <u>inject</u> it with <strong>TestBed.inject()</strong> and <u>assert</u> behavior using <strong>expect()</strong>.', 'warning', 'medium', 'How do you test an Angular service?', 'Angular Testing', 16, 'audio/1/198_answer.mp3', 'audio/1/198_question.mp3'),
+(199, 'A <strong>spy</strong> is a mock function that <u>tracks</u> calls and <u>allows</u> you to <u>replace</u> real method implementations, <u>use</u> <strong>spyOn(object, \'method\')</strong> to <u>monitor</u> interactions.', 'warning', 'medium', 'What is a spy in Jasmine testing?', 'Angular Testing', 16, 'audio/1/199_answer.mp3', 'audio/1/199_question.mp3'),
+(200, '<strong>Unit testing</strong> <u>tests</u> a single <strong>component</strong> or <strong>service</strong> in isolation, while <strong>integration testing</strong> <u>validates</u> multiple components or modules <em>working together</em>.', 'warning', 'medium', 'What’s the difference between unit testing and integration testing in Angular?', 'Angular Testing', 16, 'audio/1/200_answer.mp3', 'audio/1/200_question.mp3'),
+(201, '<strong>Karma</strong> is a <strong>test runner</strong> that <u>executes</u> tests in real browsers, <u>reports</u> results, and <u>watches</u> for file changes to <u>re-run</u> tests automatically.', 'success', 'easy', 'What is Karma’s role in Angular testing?', 'Angular Testing', 16, 'audio/1/201_answer.mp3', 'audio/1/201_question.mp3'),
+(202, 'You <u>use</u> <strong>fixture.debugElement</strong> to <u>query</u> elements, <u>trigger</u> events with <strong>dispatchEvent()</strong>, and <u>verify</u> results using <strong>expect()</strong>.', 'warning', 'medium', 'How do you test DOM interactions in Angular components?', 'Angular Testing', 16, 'audio/1/202_answer.mp3', 'audio/1/202_question.mp3'),
+(203, '<strong>Async testing</strong> <u>handles</u> asynchronous code by <u>using</u> helpers like <strong>async()</strong>, <strong>fakeAsync()</strong>, and <strong>tick()</strong> to <u>control</u> execution flow in tests.', 'warning', 'medium', 'What is async testing in Angular?', 'Angular Testing', 16, 'audio/1/203_answer.mp3', 'audio/1/203_question.mp3'),
+(204, '<strong>async()</strong> <u>wraps</u> a test in an asynchronous zone and <u>waits</u> for tasks to <u>complete</u>, while <strong>fakeAsync()</strong> <u>simulates</u> async passage of time and <u>requires</u> manual <strong>tick()</strong> calls.', 'danger', 'hard', 'What is the difference between fakeAsync and async in Angular testing?', 'Angular Testing', 16, 'audio/1/204_answer.mp3', 'audio/1/204_question.mp3'),
+(205, 'You <u>use</u> <strong>HttpClientTestingModule</strong> with <strong>HttpTestingController</strong> to <u>intercept</u> HTTP calls, <u>flush</u> mock responses, and <u>verify</u> no pending requests remain.', 'danger', 'hard', 'How do you mock HTTP requests in Angular unit tests?', 'Angular Testing', 16, 'audio/1/205_answer.mp3', 'audio/1/205_question.mp3');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reset_token`
+--
+
+CREATE TABLE `reset_token` (
+  `id` bigint(20) NOT NULL,
+  `expiry_date` datetime(6) DEFAULT NULL,
+  `token` varchar(255) DEFAULT NULL,
+  `user_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `reset_token`
+--
+
+INSERT INTO `reset_token` (`id`, `expiry_date`, `token`, `user_id`) VALUES
+(1, '2025-09-11 16:58:58.971544', 'c7d3e33b-9d1d-4901-a4f3-aee67ef9b3c5', 2),
+(2, '2025-10-20 17:54:07.640607', '6a31ccdd-ca19-4b56-a00f-4997dc8384d5', 2),
+(3, '2025-10-21 15:15:50.605505', '456ec0d6-3dd9-4934-95e9-48c61b95cc6b', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `study_session`
+--
+
+CREATE TABLE `study_session` (
+  `id` bigint(20) NOT NULL,
+  `topic` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `user_id` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `study_session`
+--
+
+INSERT INTO `study_session` (`id`, `topic`, `created_at`, `user_id`) VALUES
+(3, 'Photosynthesis', '2025-09-10 17:03:55', 1),
+(4, 'Kubernetes', '2025-09-11 16:26:00', 1),
+(11, 'java', '2025-10-10 17:50:22', 1),
+(12, 'angular', '2025-10-10 17:50:22', 1),
+(13, 'junit', '2025-10-10 17:50:22', 1),
+(14, 'react', '2025-10-10 17:50:22', 1),
+(15, 'spring', '2025-10-10 17:50:22', 1),
+(16, 'testing', '2025-10-10 17:50:22', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` bigint(20) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `subscription_tier` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `subscription_tier`) VALUES
+(1, 'test@test.com', 'p123', 'PREMIUM'),
+(2, 'crystal.is.hansen23@gmail.com', '$2a$10$RlNczGNINtbL.6ew4nbPOuC.eQ8YNXzS/2H6uwIIpTbAOIJkplDLu', 'PREMIUM'),
+(3, 'test@example.com', 'pass123', 'FREE'),
+(4, 'test@example.com', 'pass123', 'FREE'),
+(5, 'test@example.com', 'pass123', 'FREE');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `flashcard`
+--
+ALTER TABLE `flashcard`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FKexair5xuhipounj3ucnnulnrm` (`session_id`);
+
+--
+-- Indexes for table `reset_token`
+--
+ALTER TABLE `reset_token`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `FK4vxwjrcj8j479hf5iehw6qnaa` (`user_id`);
+
+--
+-- Indexes for table `study_session`
+--
+ALTER TABLE `study_session`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_user` (`user_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `flashcard`
+--
+ALTER TABLE `flashcard`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
+
+--
+-- AUTO_INCREMENT for table `reset_token`
+--
+ALTER TABLE `reset_token`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `study_session`
+--
+ALTER TABLE `study_session`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `flashcard`
+--
+ALTER TABLE `flashcard`
+  ADD CONSTRAINT `FKexair5xuhipounj3ucnnulnrm` FOREIGN KEY (`session_id`) REFERENCES `study_session` (`id`);
+
+--
+-- Constraints for table `reset_token`
+--
+ALTER TABLE `reset_token`
+  ADD CONSTRAINT `FK4vxwjrcj8j479hf5iehw6qnaa` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `study_session`
+--
+ALTER TABLE `study_session`
+  ADD CONSTRAINT `fk_user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);

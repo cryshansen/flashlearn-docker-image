@@ -1,0 +1,23 @@
+
+
+# application.yml
+
+#: OpenAI: one key → all endpoints.
+openai:
+  # if environment var then its this.   
+  apiKey: ${OPENAI_API_KEY}  # One key for both chat + TTS
+  chatModel: gpt-4o-mini
+  ttsModel: gpt-4o-mini-tts
+#Google: project-specific credentials (usually service account JSON).
+google:
+  projectId: your-google-project-id
+  credentialsFile: ${GOOGLE_APPLICATION_CREDENTIALS} # points to service-account.json
+  voice: en-US-Wavenet-D
+
+#AWS: IAM user credentials (access + secret keys).
+aws:
+  accessKey: ${AWS_ACCESS_KEY_ID}
+  secretKey: ${AWS_SECRET_ACCESS_KEY}
+  region: us-east-1
+  voiceId: Joanna
+

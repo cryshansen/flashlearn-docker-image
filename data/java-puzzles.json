@@ -1,0 +1,96 @@
+{
+  "title": "Java Interview Puzzles",
+  "author": "Crystal Hansen",
+  "pages": [
+    {
+      "title": "Final Variable, Object, Method",
+      "problem": "What is the difference between final variable, object, and method?",
+      "idea": "final variable cannot change; final object reference is immutable but the object itself can change; final method cannot be overridden.",
+      "code": "final int x = 5;\nfinal MyObject obj = new MyObject();\nfinal void myMethod() {}"
+    },
+    {
+      "title": "Interface Example",
+      "problem": "What is an interface?",
+      "idea": "Defines abstract methods that classes implement.",
+      "code": "interface MyInterface {\n    void doSomething();\n}\nclass MyClass implements MyInterface {\n    public void doSomething() {\n        System.out.println(\"Doing something\");\n    }\n}"
+    },
+    {
+      "title": "Functional Interface",
+      "problem": "Does an interface have only one method?",
+      "idea": "Functional interfaces have one abstract method, usable with lambdas.",
+      "code": "@FunctionalInterface\ninterface MyFunc {\n    void run();\n}"
+    },
+    {
+      "title": "Enum Example",
+      "problem": "What is an enum?",
+      "idea": "Represents a fixed set of constants.",
+      "code": "enum Day {\n    MONDAY, TUESDAY, WEDNESDAY\n}"
+    },
+    {
+      "title": "List Example",
+      "problem": "What is a List?",
+      "idea": "Ordered collection allowing duplicates.",
+      "code": "List<String> list = new ArrayList<>();\nlist.add(\"Java\");"
+    },
+    {
+      "title": "Set Example",
+      "problem": "What is a Set?",
+      "idea": "Unordered collection with unique elements.",
+      "code": "Set<String> set = new HashSet<>();\nset.add(\"Java\");"
+    },
+    {
+      "title": "Map Example",
+      "problem": "What is a Map?",
+      "idea": "Stores key-value pairs with unique keys.",
+      "code": "Map<String, Integer> map = new HashMap<>();\nmap.put(\"Java\", 10);"
+    },
+    {
+      "title": "For Loop",
+      "problem": "Traditional for loop",
+      "idea": "Iterates over array/list with index.",
+      "code": "for(int i=0; i<n; i++) {\n    System.out.println(arr[i]);\n}"
+    },
+    {
+      "title": "Enhanced For Loop",
+      "problem": "For-each loop over collection",
+      "idea": "Iterates without using index.",
+      "code": "for(String s : list) {\n    System.out.println(s);\n}"
+    },
+    {
+      "title": "While Loop",
+      "problem": "While loop example",
+      "idea": "Executes while condition is true.",
+      "code": "int i = 0;\nwhile(i < 5) {\n    System.out.println(i);\n    i++;\n}"
+    },
+    {
+      "title": "Do-While Loop",
+      "problem": "Do-while loop example",
+      "idea": "Executes at least once, then checks condition.",
+      "code": "int i = 0;\ndo {\n    System.out.println(i);\n    i++;\n} while(i < 5);"
+    },
+    {
+      "title": "Lambda forEach",
+      "problem": "One-line iteration using lambda",
+      "idea": "Use streams or forEach method for concise iteration.",
+      "code": "list.forEach(System.out::println);"
+    },
+    {
+      "title": "Streams API",
+      "problem": "Functional style iteration",
+      "idea": "Use streams to filter, map, and iterate collections.",
+      "code": "list.stream()\n    .filter(s -> s.length() > 3)\n    .forEach(System.out::println);"
+    },
+    {
+      "title": "Equals vs ==",
+      "problem": "Difference between == and .equals()",
+      "idea": "== compares references, .equals() compares object content.",
+      "code": "String a = \"test\";\nString b = new String(\"test\");\nboolean res1 = (a == b); // false\nboolean res2 = a.equals(b); // true"
+    },
+    {
+      "title": "Spring Boot",
+      "problem": "Advantage of Spring Boot over Spring Framework",
+      "idea": "Preconfigured defaults, embedded server, production-ready apps.",
+      "code": "import org.springframework.boot.SpringApplication;\nimport org.springframework.boot.autoconfigure.SpringBootApplication;\n\n@SpringBootApplication\npublic class App {\n    public static void main(String[] args) {\n        SpringApplication.run(App.class, args);\n    }\n}"
+    }
+  ]
+}
