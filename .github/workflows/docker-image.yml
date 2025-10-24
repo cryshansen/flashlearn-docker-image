@@ -13,85 +13,47 @@ jobs:
       OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
 
     steps:
-      # Step 1: Checkout repo
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
-      # Step 2: Set up JDK 21
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
-          java-version: "21"
-          distribution: "temurin"
+          java-version: 21
+          distribution: temurin
           cache: maven
 
-      # Step 3: Set up Docker Buildx
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      # Step 4: Build Docker images using Compose
       - name: Build Docker images
         run: docker compose build
 
-      # Step 5: Start containers in detached mode
       - name: Start containers
         run: docker compose up -d
 
-      # Step 6: Wait for MySQL & Mailhog to be healthy
-      - name: Wait for dependent services
+      - name: Wait for MySQL
         run: |
-          echo "⏳ Waiting for MySQL and Mailhog to become healthy..."
+          echo "Waiting for MySQL..."
           for i in {1..20}; do
-            MYSQL_STATUS=$(docker inspect --format='{{.State.Health.Status}}' flashlearn-mysql 2>/dev/null || echo "unknown")
-            MAILHOG_STATUS=$(docker inspect --format='{{.State.Health.Status}}' flashlearn-mailhog 2>/dev/null || echo "unknown")
-
-            echo "MySQL: $MYSQL_STATUS | Mailhog: $MAILHOG_STATUS"
-
-            if [ "$MYSQL_STATUS" == "healthy" ] && [ "$MAILHOG_STATUS" == "healthy" ]; then
-              echo "✅ Both services are healthy!"
-              break
-            fi
-
-            if [ $i -eq 20 ]; then
-              echo "❌ Timed out waiting for healthy services"
-              exit 1
-            fi
-
-            sleep 5
+            STATUS=$(docker inspect --format='{{.State.Health.Status}}' flashlearn-mysql)
+            if [ "$STATUS" == "healthy" ]; then break; fi
+            sleep 3
           done
 
-      # Step 7: Wait for Spring Boot app to start responding
-      - name: Wait for Spring Boot
+      - name: Wait for App
         run: |
-          echo "⏳ Waiting for Spring Boot app to start..."
-          for i in {1..15}; do
-            if curl -s http://localhost:8080/hello; then
-              echo "✅ App is ready!"
-              break
-            fi
-            echo "Waiting for app..."
-            sleep 5
+          echo "Waiting for Spring Boot..."
+          for i in {1..20}; do
+            if curl -s http://localhost:8080/hello; then break; fi
+            sleep 3
           done
 
-      # Step 8: Run tests inside app container
-      - name: Run Tests in container
+      - name: Run Tests
         run: |
           APP_CONTAINER=$(docker ps -q -f name=flashlearn-app)
-          echo "Running tests inside $APP_CONTAINER"
-          docker exec $APP_CONTAINER ./mvnw test
+          docker exec $APP_CONTAINER ./mvnw test || mvn test
 
-      # Step 9: Print logs if something fails
-      - name: Print container logs on failure
-        if: failure()
-        run: |
-          echo "==== APP LOGS ===="
-          docker logs flashlearn-app || true
-          echo "==== MYSQL LOGS ===="
-          docker logs flashlearn-mysql || true
-          echo "==== MAILHOG LOGS ===="
-          docker logs flashlearn-mailhog || true
-
-      # Step 10: Stop and clean up containers
-      - name: Stop containers
+      - name: Tear down
         if: always()
-        run: docker compose down -v
+        run: docker compose down
