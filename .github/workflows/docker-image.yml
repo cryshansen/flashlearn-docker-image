@@ -9,6 +9,13 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    env:
+      # These env vars are available to all steps in this job
+      SPRING_MAIL_HOST: flashlearn-mailhog
+      SPRING_MAIL_PORT: 1025
+      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/flashlearn
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
 
     steps:
       # Step 1: Checkout repo
@@ -37,10 +44,18 @@ jobs:
 
       # Step 6: Run Spring Boot container
       - name: Run Spring Boot app
-        run: docker run -d --name flashlearn-app-ci -p 8080:8080 -e SPRING_MAIL_HOST=flashlearn-mailhog -e SPRING_MAIL_PORT=1025 flashlearn-app:ci
+        run: |
+          docker run -d \
+            --name flashlearn-app-ci \
+            -p 8080:8080 \
+            -e SPRING_MAIL_HOST=$SPRING_MAIL_HOST \
+            -e SPRING_MAIL_PORT=$SPRING_MAIL_PORT \
+            -e SPRING_DATASOURCE_URL=$SPRING_DATASOURCE_URL \
+            -e SPRING_DATASOURCE_USERNAME=$SPRING_DATASOURCE_USERNAME \
+            -e SPRING_DATASOURCE_PASSWORD=$SPRING_DATASOURCE_PASSWORD \
+            flashlearn-app:ci
 
-
-       # Step 7: Wait for app to start
+      # Step 7: Wait for app to start
       - name: Wait for Spring Boot
         run: |
           echo "Waiting for app to be ready..."
@@ -53,4 +68,9 @@ jobs:
       # Step 8: Run tests
       - name: Run Tests
         run: |
-          docker exec $(docker ps -q -f ancestor=flashlearn-app:ci) ./mvnw test || mvn test
+          docker exec -e SPRING_MAIL_HOST=$SPRING_MAIL_HOST \
+                      -e SPRING_MAIL_PORT=$SPRING_MAIL_PORT \
+                      -e SPRING_DATASOURCE_URL=$SPRING_DATASOURCE_URL \
+                      -e SPRING_DATASOURCE_USERNAME=$SPRING_DATASOURCE_USERNAME \
+                      -e SPRING_DATASOURCE_PASSWORD=$SPRING_DATASOURCE_PASSWORD \
+                      $(docker ps -q -f ancestor=flashlearn-app:ci) ./mvnw test
