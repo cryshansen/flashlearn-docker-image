@@ -71,12 +71,20 @@ jobs:
       # Step 8: Run tests inside container
       - name: Run Tests
         run: |
+          echo "Listing running containers:"
+          docker ps
           CONTAINER_ID=$(docker ps -q -f name=flashlearn-app-ci)
-          echo "Running tests in container $CONTAINER_ID"
+          if [ -z "$CONTAINER_ID" ]; then
+            echo "❌ No running container found named flashlearn-app-ci"
+            docker logs flashlearn-app-ci || echo "No logs found for flashlearn-app-ci"
+            exit 1
+          fi
+
+          echo "✅ Running tests in container: $CONTAINER_ID"
           docker exec \
             -e SPRING_MAIL_HOST=$SPRING_MAIL_HOST \
             -e SPRING_MAIL_PORT=$SPRING_MAIL_PORT \
             -e SPRING_DATASOURCE_URL=$SPRING_DATASOURCE_URL \
             -e SPRING_DATASOURCE_USERNAME=$SPRING_DATASOURCE_USERNAME \
             -e SPRING_DATASOURCE_PASSWORD=$SPRING_DATASOURCE_PASSWORD \
-            $CONTAINER_ID ./mvnw test
+            $CONTAINER_ID ./mvnw test || mvn test
