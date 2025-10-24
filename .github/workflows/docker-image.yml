@@ -37,15 +37,18 @@ jobs:
 
       # Step 6: Run Spring Boot container
       - name: Run Spring Boot app
-        run: docker run -d --name flashlearn-app-ci -p 8080:8080 \
-              -e SPRING_MAIL_HOST=flashlearn-mailhog \
-              -e SPRING_MAIL_PORT=1025 \
-              flashlearn-app:ci
-
-      # Step 7: Wait for app to start
-      - name: Wait for Spring Boot
         run: docker run -d --name flashlearn-app-ci -p 8080:8080 -e SPRING_MAIL_HOST=flashlearn-mailhog -e SPRING_MAIL_PORT=1025 flashlearn-app:ci
 
+
+       # Step 7: Wait for app to start
+      - name: Wait for Spring Boot
+        run: |
+          echo "Waiting for app to be ready..."
+          for i in {1..15}; do
+            curl -s http://localhost:8080/hello && break
+            echo "Waiting..."
+            sleep 2
+          done
 
       # Step 8: Run tests
       - name: Run Tests
