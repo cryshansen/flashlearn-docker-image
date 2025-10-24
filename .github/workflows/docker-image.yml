@@ -60,17 +60,23 @@ jobs:
         run: |
           echo "Waiting for app to be ready..."
           for i in {1..15}; do
-            curl -s http://localhost:8080/hello && break
+            if curl -s http://localhost:8080/hello; then
+              echo "App is ready!"
+              break
+            fi
             echo "Waiting..."
             sleep 2
           done
 
-      # Step 8: Run tests
+      # Step 8: Run tests inside container
       - name: Run Tests
         run: |
-          docker exec -e SPRING_MAIL_HOST=$SPRING_MAIL_HOST \
-                      -e SPRING_MAIL_PORT=$SPRING_MAIL_PORT \
-                      -e SPRING_DATASOURCE_URL=$SPRING_DATASOURCE_URL \
-                      -e SPRING_DATASOURCE_USERNAME=$SPRING_DATASOURCE_USERNAME \
-                      -e SPRING_DATASOURCE_PASSWORD=$SPRING_DATASOURCE_PASSWORD \
-                      $(docker ps -q -f ancestor=flashlearn-app:ci) ./mvnw test
+          CONTAINER_ID=$(docker ps -q -f name=flashlearn-app-ci)
+          echo "Running tests in container $CONTAINER_ID"
+          docker exec \
+            -e SPRING_MAIL_HOST=$SPRING_MAIL_HOST \
+            -e SPRING_MAIL_PORT=$SPRING_MAIL_PORT \
+            -e SPRING_DATASOURCE_URL=$SPRING_DATASOURCE_URL \
+            -e SPRING_DATASOURCE_USERNAME=$SPRING_DATASOURCE_USERNAME \
+            -e SPRING_DATASOURCE_PASSWORD=$SPRING_DATASOURCE_PASSWORD \
+            $CONTAINER_ID ./mvnw test
